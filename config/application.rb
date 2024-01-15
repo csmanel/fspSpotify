@@ -42,12 +42,12 @@ module FspSpotify
     config.api_only = true
 
     config.middleware.use ActionDispatch::Cookies 
-    config.middleware.use ActionDispatch::Session::Cookiestore,
+    config.middleware.use ActionDispatch::Session::CookieStore,
       key: '_auth_me_session',
       same_site: :lax, 
       secure: Rails.env.production?
 
-    Jbuilder.key_format camelize: :lower
-    Jbuilder.deep_format_keys true 
+      Jbuilder.key_format camelize: :lower
+      Jbuilder.deep_format_keys true
   end
 end
