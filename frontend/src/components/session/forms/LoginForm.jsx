@@ -50,7 +50,7 @@ function LoginForm() {
                 ))}
               </ul>
               <label>
-                Username or Email
+                Email or Username
                 <input
                   type="text"
                   value={credential}
@@ -73,7 +73,7 @@ function LoginForm() {
             <p
               onClick={demoUser}
               className="demo-user"
-              style={{ 'margin-top': '1rem', cursor: 'pointer' }}
+              style={{ marginTop: '1rem', cursor: 'pointer' }}
             >
               Demo Login
             </p>
