@@ -1,4 +1,4 @@
-class CreateSongs < ActiveRecord::Migration[7.1]
+class CreateSongs < ActiveRecord::Migration[7.0]
   def change
     create_table :songs do |t|
       t.bigint :artist_id, null: false
