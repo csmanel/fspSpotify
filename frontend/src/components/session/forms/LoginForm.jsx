@@ -50,10 +50,11 @@ function LoginForm() {
                 ))}
               </ul>
               <label>
-                Email or Username
+                Email or username
                 <input
                   type="text"
                   value={credential}
+                  placeholder="Email or username"
                   onChange={(e) => setCredential(e.target.value)}
                   required
                 />
@@ -63,6 +64,7 @@ function LoginForm() {
                 <input
                   type="password"
                   value={password}
+                  placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
@@ -70,18 +72,17 @@ function LoginForm() {
               <button type="submit">Log In</button>
             </form>
 
-            <p
-              onClick={demoUser}
-              className="demo-user"
-              style={{ marginTop: '1rem', cursor: 'pointer' }}
-            >
-              Demo Login
-            </p>
-
             <div className="new-user-container">
               <p>Don't have an account?</p>
               <p className="login-link-hover">
                 {/* <Link to="/signup">Sign up for Motify</Link> */}
+              </p>
+              <p
+                onClick={demoUser}
+                className="demo-user"
+                style={{ marginTop: '1rem', cursor: 'pointer' }}
+              >
+                Demo Login
               </p>
             </div>
           </div>
