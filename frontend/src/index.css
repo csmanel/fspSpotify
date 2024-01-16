@@ -1,1 +1,94 @@
-/* TODO: Add sitewide styles */
+/* TODO Add site wide styles */
+/* @import '../node_modules/reset-css/reset.css'; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+@font-face {
+  font-family: 'CircularSpotifyBold';
+  src: url('./static/fonts/CircularSpotifyText-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CircularSpotifyBook';
+  src: url('./static/fonts/CircularSpotifyText-Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CircularSpotifyLight';
+  src: url('./static/fonts/CircularSpotifyText-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bababa;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7c7c7c;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+p {
+  font-family: 'CircularSpotifyBook', 'Helvetica Neue', 'Helvetica', 'Arial',
+    sans-serif;
+}
+
+body {
+  font-size: 1rem;
+  color: white;
+  font-family: 'CircularSpotifyLight', 'Helvetica Neue', 'Helvetica', 'Arial',
+    sans-serif;
+}
+
+.background {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container button {
+  font-family: 'CircularSpotifyBold';
+  font-size: 1rem;
+  background-color: #1db954;
+  width: 22rem;
+  border-radius: 30px;
+  margin-top: 3rem;
+  border-style: none;
+  height: 50px;
+}
+
+.form-container button:hover {
+  transform: scale(1.05);
+}

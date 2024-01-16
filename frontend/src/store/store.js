@@ -19,5 +19,4 @@ if (import.meta.env.MODE === 'production') {
 const configureStore = (preloadedState) => {
   return createStore(rootReducer, preloadedState, enhancer);
 };
-
 export default configureStore;

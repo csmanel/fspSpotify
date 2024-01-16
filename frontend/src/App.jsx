@@ -1,25 +1,29 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
-import LoginForm from './components/session/LoginForm';
-import SignupForm from './components/session/SignupForm';
+import LoginForm from './components/session/forms/LoginForm';
+import SignupForm from './components/session/forms/SignupForm';
 import Navigation from './components/Navigation';
 import * as sessionActions from './store/session';
 
 function Layout() {
   const dispatch = useDispatch();
-  const [isLoaded, setIsLoaded] = useState(false);
+  //loaded state not working
+  const [isLoggedIn, setLoggedIn] = useState(false);
 
-  useEffect(() => {
-    dispatch(sessionActions.restoreSession()).then(() => {
-      setIsLoaded(true);
-    });
-  }, [dispatch]);
+  // useEffect(() => {
+  //   //something to happen when things change, when the dependency changes
+
+  //   dispatch(sessionActions.restoreSession()).then(() => {
+  //     setLoggedIn(true);
+  //   });
+  // }, [dispatch]);
 
   return (
     <>
       <Navigation />
-      {isLoaded && <Outlet />}
+      {/* {isLoaded && <Outlet />} */}
+      <Outlet />
     </>
   );
 }
