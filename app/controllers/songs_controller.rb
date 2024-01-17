@@ -4,7 +4,7 @@ class SongsController < ApplicationController
     @songs = Song.includes(:album, :artist).all
     # need to define album and artist elsewhere
   end
-
+  
   # def show
   # end
 
