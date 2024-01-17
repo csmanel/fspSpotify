@@ -5,14 +5,13 @@ class SongsController < ApplicationController
     # need to define album and artist elsewhere
   end
   
-  # def show
-  # end
+  def show
+    @song = Song.find(params[:id])
+    render :show
+  end
 
   private 
 
-  def get_song 
-    @song = Song.find(params[:id])
-  end
 
   def song_params
     params.require(:song).permit(:artist_id, :album_id, :duration, :track_num, :name)
