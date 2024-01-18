@@ -1,8 +1,9 @@
 class SongsController < ApplicationController
   
   def index 
-    @songs = Song.includes(:album, :artist).all
-    # need to define album and artist elsewhere
+    # @songs = Song.includes(:album, :artist).all
+    @songs = Song.all
+    render json: @songs
   end
   
   def show

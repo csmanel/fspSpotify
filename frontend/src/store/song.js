@@ -3,7 +3,6 @@ import { csrfFetch } from './csrf';
 export const REQUEST_SONGS = '/requestSongs';
 export const RECEIVE_SONGS = '/recieveSongs';
 
-//do i need a song id?
 const requestSongs = () => ({
   type: REQUEST_SONGS,
 });

@@ -5,6 +5,8 @@ import LoginForm from './components/session/forms/LoginForm';
 import SignupForm from './components/session/forms/SignupForm';
 import Navigation from './components/Navigation';
 import * as sessionActions from './store/session';
+// import Song from './components/songs/Song';
+import SongContainer from './components/songs/SongContainer';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -35,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <h1>Welcome!</h1>,
+      },
+      {
+        path: '/songs',
+        element: <SongContainer />,
       },
       {
         path: 'login',
