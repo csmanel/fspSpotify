@@ -79,6 +79,7 @@ test:
 #
 production:
   <<: *default
-  database: fsp_spotify_production
-  username: fsp_spotify
-  password: <%= ENV["FSP_SPOTIFY_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: fsp_spotify_production
+  # username: fsp_spotify
+  # password: <%= ENV["FSP_SPOTIFY_DATABASE_PASSWORD"] %>
