@@ -1,3 +1,4 @@
+
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
@@ -7,6 +8,10 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+require 'open-uri'
+
+
 
 ApplicationRecord.transaction do 
   puts "Destroying tables..."
@@ -34,12 +39,20 @@ ApplicationRecord.transaction do
     }) 
   end
 
+
   Song.create!(
     # name: 'test'
   )
 
   #download link for music test 
   # https://drive.google.com/uc?export=download&id=1nkxeAnf9tMATMi1cSJTPyxincbl74hLL
+
+  # Song.create!({})
+
+  # Song.first(1).each do |song| 
+  #   song.photo.attach()
+  # end
+
 
   puts "Done!"
 end
