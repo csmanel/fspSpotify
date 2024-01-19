@@ -5,7 +5,6 @@ import App from './App';
 import './index.css';
 import configureStore from './store/store';
 import { csrfFetch, restoreCSRF } from './store/csrf';
-// import ShowSong from './components/songs/ShowSong';
 
 const store = configureStore();
 

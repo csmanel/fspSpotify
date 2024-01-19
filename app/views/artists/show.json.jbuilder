@@ -1,0 +1,1 @@
+json.extract! @artist, :id, :artist_name, :verified, ,:monthly_listeners, :about_txt 
