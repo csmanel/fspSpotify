@@ -1,1 +1,257 @@
-/* TODO: Add sitewide styles */
+/* TODO Add site wide styles */
+/* @import '../node_modules/reset-css/reset.css'; */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  background-color: #aaaaaa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+@font-face {
+  font-family: 'CircularSpotifyBold';
+  src: url('./static/fonts/CircularSpotifyText-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CircularSpotifyBook';
+  src: url('./static/fonts/CircularSpotifyText-Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CircularSpotifyLight';
+  src: url('./static/fonts/CircularSpotifyText-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bababa;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7c7c7c;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+p {
+  font-family: 'CircularSpotifyBook', 'Helvetica Neue', 'Helvetica', 'Arial',
+    sans-serif;
+}
+
+body {
+  font-size: 1rem;
+  color: white;
+  font-family: 'CircularSpotifyLight', 'Helvetica Neue', 'Helvetica', 'Arial',
+    sans-serif;
+}
+
+.background {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #d6d6d6;
+}
+
+.form-container::placeholder {
+  margin-left: 1rem;
+}
+
+.form-container input {
+  border-radius: 0.3rem;
+  background-color: #131313;
+  font-size: 1rem;
+  height: 46px;
+  border: #b8b8b8 solid 1.5px;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-container input:hover {
+  border: #e9e9e9 solid 1.5px;
+}
+
+.form-container input:focus {
+  border: #e9e9e9 solid 4px;
+}
+
+.form-container button {
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: #1db954;
+  width: 22rem;
+  border-radius: 30px;
+  margin-top: 3rem;
+  border-style: none;
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.form-container button:hover {
+  transform: scale(1.05);
+}

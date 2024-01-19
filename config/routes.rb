@@ -12,5 +12,11 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :show, :destroy]
   end
 
+  resources :songs, only: [:index, :show]
+  resources :artists, only: [:index, :show]
+  resources :albums, only: [:index, :show]
+
+
   get '*path', to: "static_pages#frontend_index"
+
 end

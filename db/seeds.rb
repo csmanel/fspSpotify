@@ -39,11 +39,20 @@ ApplicationRecord.transaction do
     }) 
   end
 
+
+  Song.create!(
+    # name: 'test'
+  )
+
+  #download link for music test 
+  # https://drive.google.com/uc?export=download&id=1nkxeAnf9tMATMi1cSJTPyxincbl74hLL
+
   # Song.create!({})
 
   # Song.first(1).each do |song| 
   #   song.photo.attach()
   # end
+
 
   puts "Done!"
 end
