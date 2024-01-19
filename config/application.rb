@@ -1,3 +1,6 @@
+require "active_job/railtie"
+# ...
+require "active_storage/engine"
 require_relative "boot"
 
 require "rails"
