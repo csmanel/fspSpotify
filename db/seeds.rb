@@ -40,9 +40,9 @@ ApplicationRecord.transaction do
   end
 
 
-  Song.create!(
-    # name: 'test'
-  )
+  # Song.create!(
+  #   # name: 'test'
+  # )
 
   #download link for music test 
   # https://drive.google.com/uc?export=download&id=1nkxeAnf9tMATMi1cSJTPyxincbl74hLL
@@ -53,6 +53,27 @@ ApplicationRecord.transaction do
   #   song.photo.attach()
   # end
 
+  Artist.create!({
+    artist_name: 'name',
+    verified: 'false',
+    monthly_listeners: '1000000',
+    about_txt: 'test text',
+  })
+
+  Album.create!({
+    artist_id: 1,
+    title: 'album 1',
+    duration: 60,
+    release_date: '1999-5-05',
+  })
+
+  Song.create!({
+    artist_id: 1,
+    album_id: 1,
+    duration: 5,
+    track_num: 2,
+    name: 'test'
+  })
 
   puts "Done!"
 end
