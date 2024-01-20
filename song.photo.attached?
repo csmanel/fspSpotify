@@ -1,0 +1,28 @@
+=> 
+[32m#<ActiveStorage::Attached::Changes::CreateOne:0x00007f11d32b4a08[0m
+ @attachable[32m=[0m
+  {[33m:[0m[33mio[0m=>
+    [32m#<File:app/assets/images/HIGHRESGUMBO.jpg>[0m,
+   [33m:[0m[33mfilename[0m=>[31m[1m"[0m[31mHIGHRESGUMBO.jpg[0m[31m[1m"[0m},
+ @blob[32m=[0m
+  [32m#<ActiveStorage::Blob:0x00007f11d298fef0[0m
+   id: [36m[1mnil[0m,
+   key: [36m[1mnil[0m,
+   filename: [31m[1m"[0m[31mHIGHRESGUMBO.jpg[0m[31m[1m"[0m,
+   content_type: [31m[1m"[0m[31mimage/jpeg[0m[31m[1m"[0m,
+   metadata: {[31m[1m"[0m[31midentified[0m[31m[1m"[0m=>[36m[1mtrue[0m},
+   service_name: [31m[1m"[0m[31mamazon_dev[0m[31m[1m"[0m,
+   byte_size: [34m[1m982185[0m,
+   checksum: [31m[1m"[0m[31mdbXqdFnxzflIQMo3SiiZFw==[0m[31m[1m"[0m,
+   created_at: [36m[1mnil[0m[32m>[0m,
+ @name[32m=[0m[31m[1m"[0m[31mphoto[0m[31m[1m"[0m,
+ @record[32m=[0m
+  [32m#<Song:0x00007f11d47a9238[0m
+   id: [36m[1mnil[0m,
+   artist_id: [36m[1mnil[0m,
+   album_id: [36m[1mnil[0m,
+   duration: [36m[1mnil[0m,
+   track_num: [36m[1mnil[0m,
+   name: [31m[1m"[0m[31mtest[0m[31m[1m"[0m,
+   created_at: [36m[1mnil[0m,
+   updated_at: [36m[1mnil[0m[32m>[0m[32m>[0m

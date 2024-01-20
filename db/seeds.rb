@@ -11,9 +11,7 @@
 
 require 'open-uri'
 
-
-
-ApplicationRecord.transaction do 
+# ApplicationRecord.transaction do 
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
   User.destroy_all
@@ -39,20 +37,37 @@ ApplicationRecord.transaction do
     }) 
   end
 
+  Artist.create!({
+    artist_name: 'name',
+    verified: 'false',
+    monthly_listeners: '1000000',
+    about_txt: 'test text',
+  })
 
-  Song.create!(
-    # name: 'test'
-  )
+  Album.create!({
+    artist_id: 1,
+    title: 'album 1',
+    duration: 60,
+    release_date: '1999-5-05',
+  })
+
+  Song.create!({
+    artist_id: 1,
+    album_id: 1,
+    duration: 5,
+    track_num: 2,
+    name: 'test'
+  })
 
   #download link for music test 
   # https://drive.google.com/uc?export=download&id=1nkxeAnf9tMATMi1cSJTPyxincbl74hLL
 
-  # Song.create!({})
-
-  # Song.first(1).each do |song| 
-  #   song.photo.attach()
-  # end
-
+  Song.first(1).each do |song| 
+    song.photo.attach(
+      io: URI.open("https://fspspotify-seeds.s3.amazonaws.com/chestnut.jpg"),
+      filename: 'test1.jpg'
+    )
+  end
 
   puts "Done!"
-end
+# end
