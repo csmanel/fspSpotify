@@ -115,3 +115,5 @@ const audioReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default audioReducer;
