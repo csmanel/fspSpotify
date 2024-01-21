@@ -5,7 +5,7 @@ import {
   playPrevious,
   toggleShuffle,
   clearQueue,
-  setQueue,
+  // setQueue,
   setVolume,
 } from '../../store/audio/audioActions';
 
