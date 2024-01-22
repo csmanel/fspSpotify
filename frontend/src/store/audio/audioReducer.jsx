@@ -12,10 +12,11 @@ import {
   CLEAR_QUEUE,
   SET_QUEUE,
   SET_VOLUME,
+  SET_CURRENT_SONG,
 } from './audioActions';
 
 const initialState = {
-  currentSong: {},
+  currentSong: null,
   currentAlbum: {},
   currentPlaylist: {},
   currentArtist: {},
@@ -110,6 +111,11 @@ const audioReducer = (state = initialState, action) => {
       return {
         ...state,
         volume: action.payload,
+      };
+    case SET_CURRENT_SONG:
+      return {
+        ...state,
+        currentSong: action.payload,
       };
     default:
       return state;

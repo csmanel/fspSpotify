@@ -7,6 +7,7 @@ import Navigation from './components/Navigation';
 import * as sessionActions from './store/session';
 // import Song from './components/songs/Song';
 import SongContainer from './components/songs/SongContainer';
+import AudioPlayer from './components/audio/AudioPlayer';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function Layout() {
       <Navigation />
       {/* {isLoaded && <Outlet />} */}
       <Outlet />
+      <AudioPlayer />
     </>
   );
 }

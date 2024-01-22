@@ -11,6 +11,7 @@ export const PLAY_PREVIOUS = 'songs/PLAY_PREVIOUS';
 export const CLEAR_QUEUE = 'songs/CLEAR_QUEUE';
 export const SET_QUEUE = 'songs/SET_QUEUE';
 export const SET_VOLUME = 'songs/SET_VOLUME';
+export const SET_CURRENT_SONG = 'songs/SET_CURRENT_SONG';
 
 export const receiveSong = (song) => ({
   type: RECEIVE_SONG,
@@ -58,4 +59,9 @@ export const setQueue = (queue) => ({
 export const setVolume = (volume) => ({
   type: SET_VOLUME,
   volume,
+});
+export const setCurrentSong = (song) => ({
+  // console.log('Current Song being set', song)
+  type: SET_CURRENT_SONG,
+  song,
 });

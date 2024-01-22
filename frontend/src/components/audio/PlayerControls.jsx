@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
 import {
   togglePlayPause,
   playNext,
@@ -9,7 +10,17 @@ import {
   setVolume,
 } from '../../store/audio/audioActions';
 
-const PlayerControls = () => {
+//icons
+import {
+  IoPlayBackSharp,
+  IoPlayForwardSharp,
+  IoPlaySkipBackSharp,
+  IoPlaySkipForwardSharp,
+  IoPlaySharp,
+  IoPauseSharp,
+} from 'react-icons/io5';
+
+const PlayerControls = ({ audioRef }) => {
   const dispatch = useDispatch();
   const isPlaying = useSelector((state) => state.audio.toggleIsPlaying);
   const isShuffled = useSelector((state) => state.audio.toggleShuffle);
@@ -44,15 +55,31 @@ const PlayerControls = () => {
     dispatch(setVolume(newVolume));
   };
 
+  useEffect(() => {
+    if (isPlaying) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+  }, [isPlaying, audioRef]);
+
   return (
     <div className="player-controls">
-      <button onClick={handlePrevious}>Previous</button>
-      <button onClick={handlePlayPause}>{isPlaying ? 'Pause' : 'Play'}</button>
-      <button onClick={handleNext}>Next</button>
+      <button onClick={handlePrevious}>
+        <IoPlaySkipBackSharp />
+      </button>
+      <button onClick={handlePlayPause}>
+        {isPlaying ? <IoPauseSharp /> : <IoPlaySharp />}
+      </button>
+      <button onClick={handleNext}>
+        <IoPlaySkipForwardSharp />
+      </button>
       <button onClick={handleToggleShuffle}>
         {isShuffled ? 'Disable Shuffle' : 'Enable Shuffle'}
       </button>
-      <button onClick={handleClearQueue}>Clear Queue</button>
+      <button onClick={handleClearQueue}>
+        <IoPlayForwardSharp />
+      </button>
       <input
         type="range"
         min="0"
