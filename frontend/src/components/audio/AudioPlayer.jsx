@@ -16,16 +16,15 @@ import test_src from '../../data/ahhhh.wav';
 export default function AudioPlayer() {
   const dispatch = useDispatch();
 
-  const currentSong = useSelector((state) => state.audio.currentSong);
-
-  // const [currentSong, setCurrentSong] = useState();
+  // const currentSong = useSelector((state) => state.audio.currentSong);
+  const [currentSong, setCurrentSong] = useState({});
   const toggleIsPlaying = useSelector((state) => state.audio.toggleIsPlaying);
   const volume = useSelector((state) => state.audio.volume);
 
   const [timeProgress, setTimeProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  const audioRef = useRef(test_src);
+  const audioRef = useRef();
   const progressBarRef = useRef();
 
   // useEffect(() => {
@@ -72,7 +71,7 @@ export default function AudioPlayer() {
   return (
     <div className="audio-player">
       <div className="inner">
-        <SongDisplay currentSong={audioRef} />
+        <SongDisplay currentSong={currentSong} audioRef={audioRef} />
         <PlayerControls audioRef={audioRef} />
       </div>
     </div>
