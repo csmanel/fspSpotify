@@ -15,9 +15,9 @@ import { songs } from '../../data/songs';
 export default function AudioPlayer() {
   const dispatch = useDispatch();
 
-  // const currentSong = useSelector((state) => state.audio.currentSong);
+  const currentSong = useSelector((state) => state.audio.currentSong);
 
-  const [currentSong, setCurrentSong] = useState();
+  // const [currentSong, setCurrentSong] = useState();
   const toggleIsPlaying = useSelector((state) => state.audio.toggleIsPlaying);
   const volume = useSelector((state) => state.audio.volume);
 
