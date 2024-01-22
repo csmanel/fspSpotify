@@ -27,7 +27,7 @@ const PlayerControls = ({ audioRef }) => {
   const currentVolume = useSelector((state) => state.audio.volume);
 
   const handlePlayPause = () => {
-    dispatch(togglePlayPause);
+    dispatch(togglePlayPause());
   };
 
   const handleToggleShuffle = () => {
@@ -39,7 +39,7 @@ const PlayerControls = ({ audioRef }) => {
   };
 
   const handlePrevious = () => {
-    dispatch(playPrevious);
+    dispatch(playPrevious());
   };
 
   const handleClearQueue = () => {
@@ -54,14 +54,6 @@ const PlayerControls = ({ audioRef }) => {
   const handleSetVolume = (newVolume) => {
     dispatch(setVolume(newVolume));
   };
-
-  useEffect(() => {
-    if (isPlaying) {
-      audioRef.current.play();
-    } else {
-      audioRef.current.pause();
-    }
-  }, [isPlaying, audioRef]);
 
   return (
     <div className="player-controls">

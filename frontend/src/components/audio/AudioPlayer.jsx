@@ -11,6 +11,7 @@ import PlayerControls from './PlayerControls';
 import SongDisplay from './SongDisplay';
 import ProgressBar from './ProgressBar';
 import { songs } from '../../data/songs';
+import test_src from '../../data/ahhhh.wav';
 
 export default function AudioPlayer() {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ export default function AudioPlayer() {
   const [timeProgress, setTimeProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  const audioRef = useRef();
+  const audioRef = useRef(test_src);
   const progressBarRef = useRef();
 
   // useEffect(() => {
@@ -71,7 +72,7 @@ export default function AudioPlayer() {
   return (
     <div className="audio-player">
       <div className="inner">
-        <SongDisplay currentSong={currentSong} audioRef={audioRef} />
+        <SongDisplay currentSong={audioRef} />
         <PlayerControls audioRef={audioRef} />
       </div>
     </div>
