@@ -1,4 +1,4 @@
-class SongsController < ApplicationController
+class Api::SongsController < ApplicationController
   
   def index 
     # @songs = Song.includes(:album, :artist).all

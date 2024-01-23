@@ -5,7 +5,8 @@ const RightPanel = () => {
   return (
     <div className="right-container">
       <h1>Big Boy Mixes for You</h1>
-      <AlbumPage />
+      {/* <AlbumPage /> */}
+      {/* should be the general music landing page */}
     </div>
   );
 };

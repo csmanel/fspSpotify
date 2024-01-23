@@ -25,9 +25,10 @@ export const receiveArtist = (artist) => ({
   type: RECEIVE_ARTIST,
   artist,
 });
-export const receiveAlbum = (album) => ({
+export const receiveAlbum = (data) => ({
   type: RECEIVE_ALBUM,
-  album,
+  album: data.album,
+  artist: data.artist,
 });
 export const receiveAlbums = (albums) => ({
   type: RECEIVE_ALBUMS,
