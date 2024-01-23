@@ -8,6 +8,7 @@ import * as sessionActions from './store/session';
 // import Song from './components/songs/Song';
 import SongContainer from './components/songs/SongContainer';
 import AudioPlayer from './components/audio/AudioPlayer';
+import MainContainer from './components/mainPage/MainContainer';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -38,7 +39,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <h1>Welcome!</h1>,
+        element: <h1>welcome</h1>,
+      },
+      {
+        path: '/main',
+        element: <MainContainer />,
       },
       {
         path: '/songs',

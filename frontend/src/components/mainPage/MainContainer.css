@@ -1,0 +1,19 @@
+.main-container {
+  background-color: #000000;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 5.375rem);
+  display: flex;
+}
+
+.main-left {
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-right {
+  display: flex;
+  width: 79vw;
+  margin-left: 10px;
+}
