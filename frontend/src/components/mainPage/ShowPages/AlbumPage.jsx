@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 // import { fetchAlbum } from '../../../store/album';
@@ -9,7 +9,6 @@ const AlbumPage = () => {
   const dispatch = useDispatch();
 
   const { id } = useParams();
-  console.log(id);
   const [album, setAlbum] = useState(null);
 
   useEffect(() => {
@@ -18,7 +17,6 @@ const AlbumPage = () => {
       if (response.ok) {
         const data = await response.json();
         setAlbum(data.album);
-        debugger;
         dispatch(receiveAlbum(data));
       } else {
         console.log('error fetching album:', response.statusText);
@@ -27,14 +25,33 @@ const AlbumPage = () => {
     fetchAlbum();
   }, [id]);
 
+  // const { title, releaseDate, artistName, songs } = album;
+
   if (!album) {
     return <p>loading album....</p>;
   }
   return (
-    <div>
+    <div className="album-display">
+      {console.log(album)}
+      <div className="album-header">
+        <p>{album.title}</p>
+        <p>{album.artistName}</p>
+        <p>{album.releaseDate}</p>
+      </div>
+      {album.songs?.map((song, trackNum) => (
+        //this key is a placeholder so that im not getting errors
+        <div key={trackNum}>
+          <div className="song-list">
+            <p>{song.name}</p>
+          </div>
+        </div>
+      ))}
+
+      {/* header in sptofiy that contains track name/album name */}
+      {/* 
       <h1>{album.title}</h1>
       <p>artist: {album.artistName}</p>
-      <p>release date: {new Date(album.releaseDate).toLocaleDateString()}</p>
+      <p>release date: {new Date(album.releaseDate).toLocaleDateString()}</p> */}
     </div>
   );
 };

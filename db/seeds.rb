@@ -11,8 +11,6 @@
 
 require 'open-uri'
 
-
-
 ApplicationRecord.transaction do 
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
@@ -74,13 +72,24 @@ ApplicationRecord.transaction do
     release_date: '1999-5-05',
   })
 
-  Song.create!({
-    artist_id: 1,
-    album_id: 1,
-    duration: 5,
-    track_num: 2,
-    name: 'test'
-  })
-
+  album_one_songs = [
+    'song 1',
+    'song 2',
+    'song 3',
+    'song 4',
+    'song 5',
+    'song 6',
+  ]
+  
+  album_one_songs.each_with_index do |title, i|
+    Song.create!(
+      name: title,
+      artist_id: 1,
+      album_id: 1,
+      duration: 5,
+      track_num: i,
+    )
+  end
+  
   puts "Done!"
 end
