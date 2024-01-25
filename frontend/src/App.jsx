@@ -49,7 +49,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/albums/:id',
-        element: <AlbumPage />,
+        element: <MainContainer />,
       },
       {
         path: '/songs',

@@ -1,4 +1,4 @@
-import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import HomeBar from './HomeBar';
 import Library from './Library';
 import './MainContainer.css';
@@ -13,6 +13,9 @@ const MainContainer = () => {
       </div>
       <div className="main-right">
         <RightPanel />
+        <Routes>
+          <Route path="/albums/:id"></Route>
+        </Routes>
       </div>
     </div>
   );

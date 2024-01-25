@@ -30,14 +30,12 @@ const AlbumPage = () => {
   }
   return (
     <div className="album-display">
-      {console.log(album)}
       <div className="album-header">
         <p>{album.title}</p>
         <p>{album.artistName}</p>
         <p>{album.releaseDate}</p>
       </div>
       {album.songs?.map((song, trackNum) => (
-        //this key is a placeholder so that im not getting errors
         <div key={trackNum}>
           <div className="song-list">
             <p>{song.name}</p>
