@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 const Library = () => {
   const dispatch = useDispatch();
   const [albums, setAlbums] = useState([]);
+  const [activeAlbumId, setActiveAlbumId] = useState(null);
 
   const fetchAlbums = async () => {
     console.log('we are inside the album fetch');
@@ -32,11 +33,13 @@ const Library = () => {
   return (
     <div className="library-container">
       <h1>Your Libary</h1>
-      <h2>Albums</h2>
+      {/* <h2>Albums</h2> */}
       <ul>
         {albums.map((album) => (
           // <li key={album.id}>{album.title}</li>
-          <Link to={`/albums/${album.id}`}>{album.title}</Link>
+          <li key={album.id} className="album-box">
+            <Link to={`/albums/${album.id}`}>{album.title}</Link>
+          </li>
         ))}
       </ul>
     </div>

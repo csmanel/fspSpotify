@@ -8,9 +8,6 @@ import { receiveSong, togglePlayPause } from '../../store/audio/audioActions';
 export default function SongDisplay({ currentSong, audioRef }) {
   const dispatch = useDispatch();
 
-  // const audioRef = useRef(new Audio())
-
-  // const currentSong = useSelector((state) => state.audio.currentSong);
   const currentAlbum = useSelector((state) => state.audio.currentAlbum);
   const currentArtist = useSelector((state) => state.audio.currentArtist);
 

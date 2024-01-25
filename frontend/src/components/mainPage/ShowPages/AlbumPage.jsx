@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { receiveAlbum } from '../../../store/album';
 import { csrfFetch } from '../../../store/csrf';
+import './AlbumPage.css';
 
 const AlbumPage = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,8 @@ const AlbumPage = () => {
     }
   };
 
+  console.log(album);
+
   useEffect(() => {
     fetchAlbum(id);
   }, [id]);
@@ -30,18 +33,28 @@ const AlbumPage = () => {
   }
   return (
     <div className="album-display">
+      {/* image container? */}
       <div className="album-header">
-        <p>{album.title}</p>
-        <p>{album.artistName}</p>
-        <p>{album.releaseDate}</p>
+        <p>Album</p>
+        <h1>{album.title}</h1>
+        <p>
+          {album.artistName}
+          {album.releaseDate.slice(0, 4)}
+          {album.length}
+        </p>
+        <img src={album.img} alt="" />
       </div>
-      {album.songs?.map((song, trackNum) => (
-        <div key={trackNum}>
-          <div className="song-list">
-            <p>{song.name}</p>
-          </div>
-        </div>
-      ))}
+      <div className="song-list">
+        {album.songs?.map((song, trackNum) => (
+          <>
+            <ol>
+              <li key={trackNum}>{trackNum + 1}</li>
+              <li>{song.name}</li>
+            </ol>
+            <p>{album.artistName}</p>
+          </>
+        ))}
+      </div>
     </div>
   );
 };

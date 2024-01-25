@@ -59,24 +59,24 @@ ApplicationRecord.transaction do
   # end
 
   Artist.create!({
-    artist_name: 'name',
+    artist_name: 'yumpo!?',
     verified: 'false',
     monthly_listeners: '1000000',
-    about_txt: 'test text',
+    about_txt: 'such a silly band from new york',
   })
 
   Album.create!({
     artist_id: 1,
-    title: 'album 1',
+    title: 'first album number one',
     duration: 60,
     release_date: '1999-5-05',
   })
 
   album_one_songs = [
-    'song 1',
-    'song 2',
-    'song 3',
-    'song 4',
+    'ahhhhhhhhhh',
+    'sgoblin doldrums',
+    'a third song',
+    'something that has no name',
     'song 5',
     'song 6',
   ]
@@ -89,6 +89,39 @@ ApplicationRecord.transaction do
       duration: 5,
       track_num: i,
     )
+  end
+
+    Artist.create!({
+      artist_name: 'magdalena',
+      verified: 'false',
+      monthly_listeners: '2',
+      about_txt: 'small early music ensemble',
+    })
+
+    Album.create!({
+      artist_id: 2, 
+      title: 'songs from saint davids',
+      duration: 45,
+      release_date: '2023-2-02',
+      img_url: '\\wsl.localhost\Ubuntu\home\csmanel\appa\aA-projects\fspSpotify\fsp_spotify\frontend\src\data\images\magdalenaCover.png'
+    })
+
+    album_two_songs = [
+      'suite de la magdalena',
+      'lord randall',
+      'king of the blind',
+      'toss the feathers',
+      'adieu mes amours',
+      'aux plaisirs',
+    ]
+
+    album_two_songs.each_with_index do |title, i|
+      Song.create!(
+        name: title,
+        artist_id: 2,
+        album_id: 2,
+        duration: 3,
+        track_num: i,      )
   end
   
   puts "Done!"

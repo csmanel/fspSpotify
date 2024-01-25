@@ -1,0 +1,21 @@
+.album-display {
+  margin: 2rem 2rem 2rem 2rem;
+}
+
+.album-header > h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.song-list {
+  margin-top: 3rem;
+}
+
+.song-list > ol {
+  display: flex;
+  gap: 1rem;
+}
+
+.song-list > p {
+}
