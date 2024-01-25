@@ -3,7 +3,7 @@ import { csrfFetch } from './csrf';
 const RECEIVE_ALBUMS = 'albums/receiveAlbums';
 const RECEIVE_ALBUM = 'albums/receiveAlbum';
 
-const receiveAlbums = (data) => ({
+export const receiveAlbums = (data) => ({
   type: RECEIVE_ALBUMS,
   albums: data.albums,
   artists: data.artists,

@@ -10,6 +10,7 @@ import SongContainer from './components/songs/SongContainer';
 import AudioPlayer from './components/audio/AudioPlayer';
 import MainContainer from './components/mainPage/MainContainer';
 import AlbumPage from './components/mainPage/ShowPages/AlbumPage';
+import Library from './components/mainPage/Library';
 
 function Layout() {
   const dispatch = useDispatch();
