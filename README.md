@@ -1,24 +1,67 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Introduction 
 
-Things you may want to cover:
+fspSpotify is a clone (wip) of popular music  streaming website Spotify. Users can login to listen to music stored in their library, create and delete playlists, as well as listen to other playlists by other users. 
 
-* Ruby version
+# Technologies 
 
-* System dependencies
+- Languages: Javascript, Ruby on Rails, HTML, CSS
+- Libraries: React, Redux
+- DataBase: PSQL
 
-* Configuration
+(not yet functional)
+-Hosting: Render 
+-Storage: AWS (S3)
 
-* Database creation
+# Functionality 
 
-* Database initialization
+## Audio Player 
 
-* How to run the test suite
+Users can play/pause, skip to previous and upcoming tracks. 
+```js
+ // handles play/pause
+  useEffect(() => {
+    if (toggleIsPlaying && audioRef.current.paused) {
+      audioRef.current.play();
+    }
+    if (!toggleIsPlaying && !audioRef.current.paused) {
+      audioRef.current.pause();
+    }
+  }, [toggleIsPlaying]);
 
-* Services (job queues, cache servers, search engines, etc.)
+  //handles next song
+  const handleNextSong = () => {
+    const nextIndex =
+      (currentAlbum.songs.indexOf(currentSong) + 1) % currentAlbum.songs.length;
+    const nextSong = currentAlbum.songs[nextIndex];
 
-* Deployment instructions
+    dispatch(receiveSong(nextSong));
 
-* ...
+    if (!toggleIsPlaying) {
+      dispatch(togglePlayPause);
+    }
+  };
+
+  //handles previous song
+  const handlePrevSong = () => {
+    const prevIndex =
+      (currentAlbum.songs.indexOf(currentSong) -
+        1 +
+        currentAlbum.songs.length) %
+      currentAlbum.songs.length;
+    const prevSong = currentAlbum.songs[prevIndex];
+
+    dispatch(receiveSong(prevSong));
+
+    if (!toggleIsPlaying) {
+      dispatch(togglePlayPause);
+    }
+  };
+```
+
+# Features coming soon 
+
+-Playlist Creation 
+-Search bar
+-Dynamic ALbum Show page
