@@ -33,13 +33,15 @@ const Library = () => {
   return (
     <div className="library-container">
       <h1>Your Libary</h1>
-      {/* <h2>Albums</h2> */}
       <ul>
         {albums.map((album) => (
-          // <li key={album.id}>{album.title}</li>
-          <li key={album.id} className="album-box">
-            <Link to={`/albums/${album.id}`}>{album.title}</Link>
-          </li>
+          <>
+            <Link to={`/albums/${album.id}`} className="album-text">
+              <li key={album.id} className="album-box">
+                {album.title}
+              </li>
+            </Link>
+          </>
         ))}
       </ul>
     </div>

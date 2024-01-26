@@ -1,6 +1,6 @@
 import PlayerControls from './PlayerControls';
 import { BsMusicNoteBeamed } from 'react-icons/bs';
-import test_src from '../../data/ahhhh.wav';
+import test_src from '../../data/audioFile/magdalena/MAGDALENA_03_King_of_the_Blind_Master1WEB.mp3';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { receiveSong, togglePlayPause } from '../../store/audio/audioActions';

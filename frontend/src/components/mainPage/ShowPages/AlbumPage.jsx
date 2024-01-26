@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { receiveAlbum } from '../../../store/album';
 import { csrfFetch } from '../../../store/csrf';
+import magdalenaCover from '../../../data/images/magdalenaCover.png';
+import caretakerCover from '../../../data/images/caretakerCover.jpg';
 import './AlbumPage.css';
 
 const AlbumPage = () => {
@@ -35,23 +37,27 @@ const AlbumPage = () => {
     <div className="album-display">
       {/* image container? */}
       <div className="album-header">
-        <p>Album</p>
-        <h1>{album.title}</h1>
-        <p>
-          {album.artistName}
-          {album.releaseDate.slice(0, 4)}
-          {album.length}
-        </p>
-        <img src={album.img} alt="" />
+        <img src={magdalenaCover} alt="" className="album-art" />
+        <div className="header-text">
+          <p className="label">Album</p>
+          <h1 className="album-text-header">{album.title}</h1>
+          <p className="info">
+            {album.artistName} &bull; {album.releaseDate.slice(0, 4)} &bull;{' '}
+            {album.songs.length} songs
+          </p>
+        </div>
       </div>
       <div className="song-list">
         {album.songs?.map((song, trackNum) => (
           <>
-            <ol>
-              <li key={trackNum}>{trackNum + 1}</li>
-              <li>{song.name}</li>
+            <ol className="track">
+              <li className="track-number" key={trackNum}>
+                {trackNum + 1}
+              </li>
+              {/* <img src={magdalenaCover} alt="" className="album-art" /> */}
+              <li className="track-title">{song.name}</li>
             </ol>
-            <p>{album.artistName}</p>
+            <p className="song-artist-name">{album.artistName}</p>
           </>
         ))}
       </div>

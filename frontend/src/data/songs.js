@@ -1,5 +1,5 @@
-import test_src from './ahhhh.wav';
 import test_img from './chestnut.jpg';
+import test_src from './aduioFile/magdalena/MAGDALENA_03_King_of_the_Blind_Master1WEB.mp3';
 
 export const songs = [
   {

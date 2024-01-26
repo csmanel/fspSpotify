@@ -123,6 +123,70 @@ ApplicationRecord.transaction do
         duration: 3,
         track_num: i,      )
   end
+
+  Artist.create!({
+    artist_name: 'cohort b ',
+    verified: 'false',
+    monthly_listeners: '10',
+    about_txt: 'grime punk band ',
+  })
+
+  Album.create!({
+    artist_id: 3, 
+    title: '1001 lukewarm usa',
+    duration: 45,
+    release_date: '2022-06-06',
+    img_url: '\\wsl.localhost\Ubuntu\home\csmanel\appa\aA-projects\fspSpotify\fsp_spotify\frontend\src\data\images\magdalenaCover.png'
+  })
+
+  album_two_songs = [
+    'this is traffic',
+    'dog bite',
+    'pursed up and bruised',
+    'rust',
+    'orca',
+  ]
+
+  album_two_songs.each_with_index do |title, i|
+    Song.create!(
+      name: title,
+      artist_id: 3,
+      album_id: 3,
+      duration: 17,
+      track_num: i,      )
+  end
   
+  Artist.create!({
+      artist_name: 'caretaker',
+      verified: 'false',
+      monthly_listeners: '10',
+      about_txt: 'noise????',
+    })
+
+    Album.create!({
+      artist_id: 2, 
+      title: 'everywhere at the end of time',
+      duration: 45,
+      release_date: '2040-05-05',
+      img_url: '\\wsl.localhost\Ubuntu\home\csmanel\appa\aA-projects\fspSpotify\fsp_spotify\frontend\src\data\images\magdalenaCover.png'
+    })
+
+    album_two_songs = [
+      'sits just a burning memory',
+      'we dont have many days ',
+      'late afternoon drifting',
+      'childishly fresh eyes',
+      'slightly bewildered',
+    ]
+
+    album_two_songs.each_with_index do |title, i|
+      Song.create!(
+        name: title,
+        artist_id: 4,
+        album_id: 4,
+        duration: 40,
+        track_num: i,      )
+  end
+
   puts "Done!"
 end
