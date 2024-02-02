@@ -9,9 +9,9 @@ class Api::ArtistsController < ApplicationController
   end
 
   private 
-    def artist_params 
-      params.require(:artist).permit(:artist_name, :verified, :monthly_listeners, :about_txt)
-    end
-  end 
+  
+  def artist_params 
+    params.require(:artist).permit(:artist_name, :verified, :monthly_listeners, :about_txt)
+  end
 
 end
