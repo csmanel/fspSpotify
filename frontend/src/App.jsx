@@ -7,6 +7,10 @@ import Navigation from './components/Navigation';
 import * as sessionActions from './store/session';
 // import Song from './components/songs/Song';
 import SongContainer from './components/songs/SongContainer';
+import AudioPlayer from './components/audio/AudioPlayer';
+import MainContainer from './components/mainPage/MainContainer';
+import AlbumPage from './components/mainPage/ShowPages/AlbumPage';
+import Library from './components/mainPage/Library';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -26,6 +30,7 @@ function Layout() {
       <Navigation />
       {/* {isLoaded && <Outlet />} */}
       <Outlet />
+      <AudioPlayer />
     </>
   );
 }
@@ -36,7 +41,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <h1>Welcome!</h1>,
+        element: <h1>welcome</h1>,
+      },
+      {
+        path: '/main',
+        element: <MainContainer />,
+      },
+      {
+        path: '/albums/:id',
+        element: <MainContainer />,
       },
       {
         path: '/songs',

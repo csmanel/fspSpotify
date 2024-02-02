@@ -1,17 +1,25 @@
 import { csrfFetch } from './csrf';
 
 const RECEIVE_ALBUMS = 'albums/receiveAlbums';
+const RECEIVE_ALBUM = 'albums/receiveAlbum';
 
-const receiveAlbums = (albums) => ({
+export const receiveAlbums = (data) => ({
   type: RECEIVE_ALBUMS,
-  albums,
+  albums: data.albums,
+  artists: data.artists,
+});
+
+export const receiveAlbum = (data) => ({
+  type: RECEIVE_ALBUM,
+  album: data.album,
+  artist: data.artist,
 });
 
 export const fetchAlbums = () => async (dispatch) => {
   const response = await csrfFetch('/albums');
   if (response.ok) {
-    const albums = await response.json();
-    dispatch(receiveAlbums(albums));
+    const data = await response.json();
+    dispatch(receiveAlbums(data));
   } else {
     console.error('Error fetching albums:', response.statusText);
   }
@@ -24,10 +32,15 @@ const albumReducer = (state = initialState, action) => {
     case RECEIVE_ALBUMS:
       return {
         ...state,
-        ...action.payload.reduce((albumsState, album) => {
+        ...action.albums.reduce((albumsState, album) => {
           albumsState[album.id] = album;
           return albumsState;
         }, {}),
+      };
+    case RECEIVE_ALBUM:
+      return {
+        ...state,
+        [action.album.id]: action.album,
       };
 
     default:

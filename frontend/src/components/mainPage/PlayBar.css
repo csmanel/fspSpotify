@@ -1,0 +1,16 @@
+.audio-player {
+  width: 100%;
+  position: fixed;
+  height: 5.375rem;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+}
+
+.player-controls {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 0.25rem;
+}

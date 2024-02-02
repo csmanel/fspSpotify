@@ -1,0 +1,19 @@
+.right-container {
+  box-sizing: border-box;
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 0.5rem;
+  border-radius: 5px;
+  height: 100%;
+}
+
+.right-container > h1 {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  height: 3rem;
+  padding: 1rem;
+  padding-bottom: 1rem;
+}

@@ -1,0 +1,50 @@
+.library-container {
+  background-color: #121212;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  margin: 5px 5px 5px 5px;
+}
+
+.library-container > h1 {
+  padding: 1rem;
+}
+
+.library-container > p {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  height: 3rem;
+  padding: 1rem;
+  padding-bottom: 1rem;
+}
+
+.library-container > ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 1rem;
+}
+.album-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: red solid 2px; */
+  width: 100%;
+  height: 3rem;
+  border-radius: 5px;
+  margin: 5px 5px 5px 5px;
+}
+.album-box:hover {
+  background-color: rgb(26, 26, 26);
+  cursor: pointer;
+}
+
+.album-box:active {
+  background-color: rgb(66, 66, 66);
+}
+
+.album-text {
+  text-decoration: none;
+  color: white;
+}
