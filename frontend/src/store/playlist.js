@@ -1,6 +1,5 @@
 import { csrfFetch } from './csrf';
 
-const REQUEST_PLAYLISTS = ''
 const RECEIVE_PLAYLISTS = 'playlists/receivePlaylists';
 const CREATE_PLAYLIST = 'playlists/createPlaylist';
 const UPDATE_PLAYLIST = 'playlists/updatePlaylist';
@@ -32,15 +31,15 @@ const removeSong = (songId) => {
   type: REMOVE_SONG, songId
 }
 
-export const fetchPlaylist = () => {
-  return async (dispatch) => {
+export const fetchPlaylist = () => async (dispatch) => {
     const response = await csrfFetch('/playlists')
-    const playlist = await response.json()
+
     if (response.ok) {
+      const playlist = await response.json()
       dispatch(receivePlaylists(playlist))
     } else {
       console.error('Error fetching playlist:', response.statusText);
-    }
   }
 }
 
+export const fetchCreatePlaylist = async (dispatch)
