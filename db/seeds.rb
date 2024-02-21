@@ -74,8 +74,8 @@ ApplicationRecord.transaction do
 
   album_one_songs = [
     'ahhhhhhhhhh',
-    'sgoblin doldrums',
-    'a third song',
+    'goblin doldrums',
+    'mr. jumpo',
     'something that has no name',
     'song 5',
     'song 6',
@@ -187,6 +187,12 @@ ApplicationRecord.transaction do
         duration: 40,
         track_num: i,      )
   end
+
+  Playlist.create!({
+    username_id: 1,
+    playlist_id: 1,
+    playlist_name: 'the first playlist'
+  })
 
   puts "Done!"
 end

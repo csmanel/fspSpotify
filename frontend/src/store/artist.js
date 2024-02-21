@@ -1,6 +1,5 @@
 import { csrfFetch } from './csrf';
 
-// const RECEIVE_ARTISTS = 'artists/receiveArtists';
 const RECEIVE_ARTIST = 'artists/receiveArtist';
 const RECEIVE_ARTISTS = 'artists/receiveArtists';
 const RECEIVE_ALBUMS = 'albums/receiveAlbums';
