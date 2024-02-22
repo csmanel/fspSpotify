@@ -11,8 +11,8 @@ const receivePlaylists = (playlists) => {
   type: RECEIVE_PLAYLISTS, playlists 
 }
 
-const createPlaylist = (playlist) => {
-  type: CREATE_PLAYLIST, playlist
+const createPlaylist = () => {
+  type: CREATE_PLAYLIST
 }
 
 const updatePlaylist = (playlist) => {
@@ -27,8 +27,8 @@ const addSong = (playlistId, songId) => {
   type: ADD_SONG, playlistId, songId
 }
 
-const removeSong = (songId) => {
-  type: REMOVE_SONG, songId
+const removeSong = (playlistId, songId) => {
+  type: REMOVE_SONG, playlistId, songId
 }
 
 export const fetchPlaylist = () => async (dispatch) => {
@@ -42,4 +42,6 @@ export const fetchPlaylist = () => async (dispatch) => {
   }
 }
 
-export const fetchCreatePlaylist = async (dispatch)
+export const fetchCreatePlaylist = (playlist) => async (dispatch) => {
+  const response = await csrfFetch('')
+}

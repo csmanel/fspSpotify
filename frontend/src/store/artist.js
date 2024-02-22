@@ -15,6 +15,7 @@ const receiveArtist = (artist) => ({
   artist,
 });
 
+//change this from a try catch to an if else, i dont like the try catch 
 export const fetchArtists = () => async (dispatch) => {
   try {
     const response = await csrfFetch('/artists');
