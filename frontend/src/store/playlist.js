@@ -44,4 +44,6 @@ export const fetchPlaylist = () => async (dispatch) => {
 
 export const fetchCreatePlaylist = (playlist) => async (dispatch) => {
   const response = await csrfFetch('')
+
+
 }

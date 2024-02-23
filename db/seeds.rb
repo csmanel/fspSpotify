@@ -185,13 +185,16 @@ ApplicationRecord.transaction do
         artist_id: 4,
         album_id: 4,
         duration: 40,
-        track_num: i,      )
+        track_num: i,      
+      )
+    end
   end
 
   Playlist.create!({
     username_id: 1,
     playlist_id: 1,
-    playlist_name: 'the first playlist'
+    playlist_name: 'the first playlist',
+    songs: [1, 2, 3, 4, 5, 6]
   })
 
   puts "Done!"
