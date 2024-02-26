@@ -1,6 +1,5 @@
 import { csrfFetch } from './csrf';
 
-// const RECEIVE_ARTISTS = 'artists/receiveArtists';
 const RECEIVE_ARTIST = 'artists/receiveArtist';
 const RECEIVE_ARTISTS = 'artists/receiveArtists';
 const RECEIVE_ALBUMS = 'albums/receiveAlbums';
@@ -16,6 +15,7 @@ const receiveArtist = (artist) => ({
   artist,
 });
 
+//change this from a try catch to an if else, i dont like the try catch 
 export const fetchArtists = () => async (dispatch) => {
   try {
     const response = await csrfFetch('/artists');

@@ -18,6 +18,7 @@ ApplicationRecord.transaction do
   Artist.destroy_all
   Album.destroy_all
   Song.destroy_all
+  Playlist.destroy_all
 
   puts "Resetting primary keys..."
   # For easy testing, so that after seeding, the first `User` has `id` of 1
@@ -25,7 +26,7 @@ ApplicationRecord.transaction do
   ApplicationRecord.connection.reset_pk_sequence!('artists')
   ApplicationRecord.connection.reset_pk_sequence!('albums')
   ApplicationRecord.connection.reset_pk_sequence!('songs')
-  
+  ApplicationRecord.connection.reset_pk_sequence!('playlists')  
 
   puts "Creating users..."
   # Create one user with an easy to remember username, email, and password:
@@ -74,8 +75,8 @@ ApplicationRecord.transaction do
 
   album_one_songs = [
     'ahhhhhhhhhh',
-    'sgoblin doldrums',
-    'a third song',
+    'goblin doldrums',
+    'mr. jumpo',
     'something that has no name',
     'song 5',
     'song 6',
@@ -122,7 +123,7 @@ ApplicationRecord.transaction do
         album_id: 2,
         duration: 3,
         track_num: i,      )
-  end
+    end
 
   Artist.create!({
     artist_name: 'cohort b ',
@@ -179,14 +180,21 @@ ApplicationRecord.transaction do
       'slightly bewildered',
     ]
 
-    album_two_songs.each_with_index do |title, i|
-      Song.create!(
-        name: title,
-        artist_id: 4,
-        album_id: 4,
-        duration: 40,
-        track_num: i,      )
+  album_two_songs.each_with_index do |title, i|
+    Song.create!(
+      name: title,
+      artist_id: 4,
+      album_id: 4,
+      duration: 40,
+      track_num: i,      
+    )
   end
+  
+  Playlist.create!({
+    user_id: 1,
+    name: 'the first playlist',
+    # songs: [1, 2, 3, 4, 5, 6]
+  })
 
   puts "Done!"
 end
