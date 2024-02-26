@@ -1,10 +1,10 @@
 class Playlist < ApplicationRecord
 
-  validates :username_id, :playlist_id, :playlist_name, presence: true
+  validates :user_id, :name, presence: true
 
   belongs_to :user
-  has_many :songs 
-  has_many :artists 
+  has_many :playlists_songs, dependent: :destroy
+  has_many :songs, through: :playlists_songs
 
-  serialize :songs, Array
+  # serialize :songs, Array
 end
