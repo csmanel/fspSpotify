@@ -16,6 +16,7 @@ const receiveArtist = (artist) => ({
 });
 
 //change this from a try catch to an if else, i dont like the try catch 
+// should the url be /api/artists? 
 export const fetchArtists = () => async (dispatch) => {
   try {
     const response = await csrfFetch('/artists');

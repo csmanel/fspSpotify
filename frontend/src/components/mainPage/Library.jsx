@@ -5,6 +5,7 @@ import './Library.css';
 import { csrfFetch } from '../../store/csrf';
 import { receiveAlbums } from '../../store/album';
 import { Link } from 'react-router-dom';
+import PlaylistIndex from '../playlist/PlaylistIndex';
 
 const Library = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,9 @@ const Library = () => {
   return (
     <div className="library-container">
       <h1>Your Libary</h1>
+
+      <PlaylistIndex/>
+
       <ul>
         {albums.map((album) => (
           <>
