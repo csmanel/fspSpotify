@@ -7,7 +7,7 @@ const REMOVE_PLAYLIST = 'playlists/removePlaylist';
 const ADD_SONG = 'playlists/addSong';
 const REMOVE_SONG = 'playlists/removeSong';
 
-const receivePlaylists = (playlists) => ({
+export const receivePlaylists = (playlists) => ({
   type: RECEIVE_PLAYLISTS,
   playlists,
 });
@@ -174,14 +174,3 @@ const playlistReducer = (state = initialState, action) => {
 };
 
 export default playlistReducer;
-
-// case CREATE_PLAYLIST:
-//       return
-//     case UPDATE_PLAYLIST:
-//       return
-//     case REMOVE_PLAYLIST:
-//       return
-//     case ADD_SONG:
-//       return
-//     case REMOVE_SONG:
-//       return

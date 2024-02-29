@@ -35,7 +35,9 @@ const Library = () => {
     <div className="library-container">
       <h1>Your Libary</h1>
 
-      <PlaylistIndex/>
+      <ul>
+        <PlaylistIndex />
+      </ul>
 
       <ul>
         {albums.map((album) => (
