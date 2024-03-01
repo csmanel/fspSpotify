@@ -137,8 +137,8 @@ const playlistReducer = (state = initialState, action) => {
     case RECEIVE_PLAYLISTS:
       return {
         newState,
-        ...action.payload.reduce((playlistsState, playlist) => {
-          playlistsState[playlist.id] = artists;
+        ...action.playlists.reduce((playlistsState, playlist) => {
+          playlistsState[playlist.id] = playlist;
           return playlistsState;
         }, {}),
       };

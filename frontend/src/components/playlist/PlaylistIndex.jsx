@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import { receivePlaylists, fetchPlaylist } from '../../store/playlist';
 import { useParams } from 'react-router-dom';
-import { login } from '../../store/session';
 import { csrfFetch } from '../../store/csrf';
 import { receivePlaylists } from '../../store/playlist';
 
@@ -12,9 +11,12 @@ const PlaylistIndex = () => {
 
   const { id } = useParams();
   const [playlist, setPlaylist] = useState(null);
+  console.log(playlist);
 
   const fetchPlaylist = async (id) => {
     console.log('we are inside the fetch for the playlist !!!!!!!!!');
+    console.log(playlist);
+
     const response = await csrfFetch(`/api/playlists/${id}`);
     console.log(response);
     if (response.ok) {
@@ -28,6 +30,7 @@ const PlaylistIndex = () => {
 
   useEffect(() => {
     fetchPlaylist(id);
+    console.log(playlist);
   }, [id]);
 
   if (!playlist) {

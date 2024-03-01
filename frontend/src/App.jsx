@@ -48,6 +48,10 @@ const router = createBrowserRouter([
         element: <MainContainer />,
       },
       {
+        path: '/playlists/:id',
+        element: <MainContainer />,
+      },
+      {
         path: '/songs',
         element: <SongContainer />,
       },
