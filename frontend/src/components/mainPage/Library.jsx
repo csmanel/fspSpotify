@@ -53,9 +53,11 @@ const Library = () => {
       <ul>
         {playlists.map((playlist) => (
           <div>
-            <li key={playlist.id} className="album-box">
-              {playlist.name}
-            </li>
+            <Link to={`/playlists/${playlist.id}`} className="album-text">
+              <li key={playlist.id} className="album-box">
+                {playlist.name}
+              </li>
+            </Link>
           </div>
         ))}
       </ul>
