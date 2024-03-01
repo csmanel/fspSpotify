@@ -24,9 +24,8 @@ export const fetchSongs = () => {
   };
 };
 
-const initialState = {};
 
-const songsReducer = (state = initialState, action) => {
+const songsReducer = (state = {}, action) => {
   const songs = action.payload;
   const newState = { ...state };
 
