@@ -5,8 +5,6 @@ import './MainContainer.css';
 import RightPanel from './RightPanel';
 
 const MainContainer = ({ type }) => {
-  console.log(type);
-
   return (
     <div className="main-container">
       <div className="main-left">

@@ -14,12 +14,10 @@ const Library = () => {
   const [playlists, setPlaylists] = useState([]);
 
   const fetchAlbums = async () => {
-    console.log('we are inside the album fetch');
     const response = await csrfFetch('/api/albums');
 
     if (response.ok) {
       const data = await response.json();
-      console.log(data);
       setAlbums(data.albums);
       dispatch(receiveAlbums(data));
     } else {
@@ -28,7 +26,6 @@ const Library = () => {
   };
 
   const fetchPlaylists = async () => {
-    console.log('inside the playlist fetch');
     const response = await csrfFetch('/api/playlists');
 
     if (response.ok) {
@@ -41,7 +38,6 @@ const Library = () => {
   };
 
   useEffect(() => {
-    console.log('inside the use effect');
     fetchAlbums();
     fetchPlaylists();
   }, []);

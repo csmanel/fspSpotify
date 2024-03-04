@@ -1,5 +1,3 @@
-json.playlists do 
-  json.array! @playlists do |playlist|
-    json.extract! playlist, :id, :username_id, :playlist_name
-  end
+json.array! @playlists do |playlist|
+  json.extract! playlist, :id, :user_id, :name
 end

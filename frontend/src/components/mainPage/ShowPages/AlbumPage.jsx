@@ -24,8 +24,6 @@ const AlbumPage = () => {
     }
   };
 
-  console.log(album);
-
   useEffect(() => {
     fetchAlbum(id);
   }, [id]);

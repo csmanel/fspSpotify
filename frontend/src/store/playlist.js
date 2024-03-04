@@ -1,16 +1,25 @@
 import { csrfFetch } from './csrf';
 
 const RECEIVE_PLAYLISTS = 'playlists/receivePlaylists';
+const RECEIVE_PLAYLIST = 'playlists/receivePlaylist';
 const CREATE_PLAYLIST = 'playlists/createPlaylist';
 const UPDATE_PLAYLIST = 'playlists/updatePlaylist';
 const REMOVE_PLAYLIST = 'playlists/removePlaylist';
 const ADD_SONG = 'playlists/addSong';
 const REMOVE_SONG = 'playlists/removeSong';
 
-export const receivePlaylists = (playlists) => ({
+export const receivePlaylists = (data) => ({
   type: RECEIVE_PLAYLISTS,
-  playlists,
+  playlists: data,
 });
+
+export const receivePlaylist = (data) => {
+  console.log(data);
+  return {
+    type: RECEIVE_PLAYLIST,
+    playlist: data,
+  };
+};
 
 const createPlaylist = (playlist) => ({
   type: CREATE_PLAYLIST,
@@ -38,17 +47,6 @@ const removeSong = (playlistId, songId) => ({
   playlistId,
   songId,
 });
-
-export const fetchPlaylist = () => async (dispatch) => {
-  const response = await csrfFetch('/api/playlists');
-
-  if (response.ok) {
-    const playlist = await response.json();
-    dispatch(receivePlaylists(playlist));
-  } else {
-    console.error('Error fetching playlist:', response.statusText);
-  }
-};
 
 export const fetchCreatePlaylist = (playlist) => async (dispatch) => {
   const response = await csrfFetch('/api/playlists', {
@@ -132,38 +130,42 @@ export const removeSongFromPlaylist =
 const initialState = {};
 
 const playlistReducer = (state = initialState, action) => {
-  let newState = { ...state };
   switch (action.type) {
     case RECEIVE_PLAYLISTS:
       return {
-        newState,
+        ...state,
         ...action.playlists.reduce((playlistsState, playlist) => {
           playlistsState[playlist.id] = playlist;
           return playlistsState;
         }, {}),
       };
-
+    case RECEIVE_PLAYLIST:
+      console.log('INSIDE THE PLAYLIST REDUCER', action);
+      return {
+        ...state,
+        [action.playlist.id]: action.playlist,
+      };
     case CREATE_PLAYLIST:
     case UPDATE_PLAYLIST:
       return {
-        newState,
+        ...state,
         [action.playlist.id]: action.playlist,
       };
-    case REMOVE_PLAYLIST:
-      delete newState[action.playlistId];
-      return newState;
+    // case REMOVE_PLAYLIST:
+    //   delete ...state[action.playlistId];
+    //   return ...state;
     // case ADD_SONG:
     //   return {
-    //     newState, [action.playlistId]: {
-    //       newState[action.playlistId],
-    //       songs: [newState[action.playlistId].songs, action.songId]
+    //     ...state, [action.playlistId]: {
+    //       ...state[action.playlistId],
+    //       songs: [...state[action.playlistId].songs, action.songId]
     //     }
     //   };
     // case REMOVE_SONG: {
     //   return {
-    //     newState,
+    //     ...state,
     //     [action.playlistId]: {
-    //       newState[action.playlistId],
+    //       ...state[action.playlistId],
     //       songs: state[action.palylistId].songs.filter(songId => songId !== action.songId)
     //     }
     //   }
