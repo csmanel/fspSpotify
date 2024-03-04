@@ -11,15 +11,16 @@
 
 require 'open-uri'
 
-ApplicationRecord.transaction do 
+# ApplicationRecord.transaction do 
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
-  User.destroy_all
-  Artist.destroy_all
-  Album.destroy_all
-  Song.destroy_all
+  PlaylistsSong.destroy_all
   Playlist.destroy_all
-
+  User.destroy_all
+  Song.destroy_all 
+  Album.destroy_all
+  Artist.destroy_all
+  
   puts "Resetting primary keys..."
   # For easy testing, so that after seeding, the first `User` has `id` of 1
   ApplicationRecord.connection.reset_pk_sequence!('users')
@@ -27,6 +28,7 @@ ApplicationRecord.transaction do
   ApplicationRecord.connection.reset_pk_sequence!('albums')
   ApplicationRecord.connection.reset_pk_sequence!('songs')
   ApplicationRecord.connection.reset_pk_sequence!('playlists')  
+  ApplicationRecord.connection.reset_pk_sequence!('playlists_song')  
 
   puts "Creating users..."
   # Create one user with an easy to remember username, email, and password:
@@ -45,19 +47,6 @@ ApplicationRecord.transaction do
     }) 
   end
 
-
-  # Song.create!(
-  #   # name: 'test'
-  # )
-
-  #download link for music test 
-  # https://drive.google.com/uc?export=download&id=1nkxeAnf9tMATMi1cSJTPyxincbl74hLL
-
-  # Song.create!({})
-
-  # Song.first(1).each do |song| 
-  #   song.photo.attach()
-  # end
 
   Artist.create!({
     artist_name: 'yumpo!?',
@@ -158,11 +147,11 @@ ApplicationRecord.transaction do
   end
   
   Artist.create!({
-      artist_name: 'caretaker',
-      verified: 'false',
-      monthly_listeners: '10',
-      about_txt: 'noise????',
-    })
+    artist_name: 'caretaker',
+    verified: 'false',
+    monthly_listeners: '10',
+    about_txt: 'noise????',
+  })
 
     Album.create!({
       artist_id: 2, 
@@ -190,11 +179,14 @@ ApplicationRecord.transaction do
     )
   end
   
-  Playlist.create!({
+  playlist = Playlist.create!({
     user_id: 1,
     name: 'the first playlist',
-    # songs: [1, 2, 3, 4, 5, 6]
   })
 
+  puts 'adding songs to the first playlist'
+  first_playlist_songs = Song.where(album_id: [1,2])
+  playlist.songs << first_playlist_songs
+
   puts "Done!"
-end
+# end
