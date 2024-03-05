@@ -16,16 +16,14 @@ const PlaylistPage = () => {
 
     if (response.ok) {
       const data = await response.json();
-      console.log('inside the response, here is your data:', data);
-      setPlaylist(data);
-      dispatch(receivePlaylist(data));
+      setPlaylist(data.playlist);
+      dispatch(receivePlaylist(data.playlist));
     } else {
       console.log('error fetching playlist:', response.statusText);
     }
   };
 
   useEffect(() => {
-    console.log(id);
     fetchPlaylist(id);
   }, [id]);
 
@@ -34,6 +32,7 @@ const PlaylistPage = () => {
   }
 
   console.log(playlist);
+  console.log(playlist.songs);
   return (
     <div className="album-display">
       <div className="album-header">
@@ -42,8 +41,8 @@ const PlaylistPage = () => {
           <h1 className="album-text-header">{playlist.name}</h1>
           <p className="info">
             {/* {playlist.artistName} &bull; {playlist.releaseDate.slice(0, 4)}{' '}
-            &bull;
-            {playlist.songs.length} songs */}
+            &bull; */}
+            {/* {playlist.songs.length} songs */}
           </p>
         </div>
       </div>{' '}

@@ -28,8 +28,8 @@ class Api::PlaylistsController < ApplicationController
   end
     
   def show 
-    @playlist = Playlist.find(params[:id])
-    render json: @playlist
+    @playlist = Playlist.includes(:songs).find(params[:id])
+    render :show
   end
 
   private 
