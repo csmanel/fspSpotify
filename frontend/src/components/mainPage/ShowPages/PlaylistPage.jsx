@@ -31,8 +31,6 @@ const PlaylistPage = () => {
     return <p>loading playlist....</p>;
   }
 
-  console.log(playlist);
-  console.log(playlist.songs);
   return (
     <div className="album-display">
       <div className="album-header">
@@ -40,13 +38,11 @@ const PlaylistPage = () => {
           <p className="label">playlist</p>
           <h1 className="album-text-header">{playlist.name}</h1>
           <p className="info">
-            {/* {playlist.artistName} &bull; {playlist.releaseDate.slice(0, 4)}{' '}
-            &bull; */}
-            {/* {playlist.songs.length} songs */}
+            {playlist.name} &bull; {playlist.songs.length} songs
           </p>
         </div>
-      </div>{' '}
-      {/* <div className="song-list">
+      </div>
+      <div className="song-list">
         {playlist.songs?.map((song, trackNum) => (
           <>
             <ol className="track">
@@ -58,7 +54,7 @@ const PlaylistPage = () => {
             <p className="song-artist-name">{playlist.artistName}</p>
           </>
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };
