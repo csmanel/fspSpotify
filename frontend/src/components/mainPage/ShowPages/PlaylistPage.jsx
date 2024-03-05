@@ -52,6 +52,10 @@ const PlaylistPage = () => {
               <li className="track-title">{song.name}</li>
             </ol>
             <p className="song-artist-name">{playlist.artistName}</p>
+            <ol className="trackAlbum">
+              <li>{song.album.title}</li>
+              <li>{song.duration}</li>
+            </ol>
           </>
         ))}
       </div>
