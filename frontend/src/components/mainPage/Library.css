@@ -7,6 +7,9 @@
 }
 
 .library-container > h1 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(153, 153, 153);
   padding: 1rem;
 }
 
@@ -47,6 +50,21 @@
   height: 4rem;
   border-radius: 5px;
 }
+
+.album-box:hover {
+  background-color: rgb(26, 26, 26);
+  cursor: pointer;
+}
+
+.album-box:active {
+  background-color: #000000;
+}
+
+.album-box:focus {
+  /* background-color: rgb(54, 54, 54); */
+  background-color: #232323;
+}
+
 .album-text {
   margin-left: 0.7rem;
   text-decoration: none;
@@ -54,16 +72,8 @@
 }
 
 .album-text p {
+  font-weight: bold;
+  font-size: 0.9rem;
   margin-top: 0.5rem;
   color: rgb(153, 153, 153);
-}
-.album-box:hover {
-  background-color: rgb(26, 26, 26);
-  cursor: pointer;
-}
-
-.album-box:active {
-  /* this is what the color should be if it is the current playlist or album */
-  /* background-color: rgb(66, 66, 66); */
-  background-color: #000000;
 }
