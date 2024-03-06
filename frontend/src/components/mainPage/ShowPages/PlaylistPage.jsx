@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { csrfFetch } from '../../../store/csrf';
 import { receivePlaylist } from '../../../store/playlist';
+import magdalenaCover from '../../../data/images/magdalenaCover.png';
+
 import './AlbumPage.css';
 
 const PlaylistPage = () => {
@@ -34,6 +36,7 @@ const PlaylistPage = () => {
   return (
     <div className="album-display">
       <div className="album-header">
+        <img src={magdalenaCover} alt="" className="album-art" />
         <div className="header-text">
           <p className="label">playlist</p>
           <h1 className="album-text-header">{playlist.name}</h1>
@@ -41,6 +44,14 @@ const PlaylistPage = () => {
             {playlist.name} &bull; {playlist.songs.length} songs
           </p>
         </div>
+      </div>
+      <div className="info-text">
+        <ol>
+          <li>#</li>
+          <li>Title</li>
+          <li>Album</li>
+          <li>duration</li>
+        </ol>
       </div>
       <div className="song-list">
         {playlist.songs?.map((song, trackNum) => (
