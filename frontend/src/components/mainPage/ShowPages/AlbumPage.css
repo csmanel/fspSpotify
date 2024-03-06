@@ -1,15 +1,19 @@
 .album-display {
-  /* margin: 2rem 2rem 2rem 2rem; */
-  max-width: 800px;
-  margin: 0 auto;
+  overflow: auto;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .album-header {
-  /* text-align: center;
-  padding: 20px; */
   display: flex;
   align-items: center;
   padding: 20px;
+  height: 400px;
+  background: linear-gradient(
+    to bottom,
+    rgb(85, 85, 85) 0%,
+    rgba(18, 18, 18, 0.7) 100%
+  );
 }
 
 .album-header > h1 {
@@ -28,7 +32,7 @@
   height: auto;
   margin-right: 20px;
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 2);
+  box-shadow: 0 0px 30px rgba(0, 0, 0, 0.4);
 }
 
 .header-text {
@@ -40,34 +44,66 @@
   color: #888;
 }
 
-.album-art > h1 {
-  margin: 10px 0;
-}
-
 .info {
-  font-size: 16px;
 }
 
 .info-text {
   display: flex;
-}
-
-.info-text > ol {
-  display: flex;
-}
-
-.song-list > ol {
-  display: flex;
   gap: 1rem;
 }
 
+.info-text ol {
+  display: flex;
+}
+
+.info-text li {
+  margin-right: 10rem;
+}
+
 .song-list {
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 10px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc31;
+}
+
+.track ol {
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
-  /* border-top-width: 90%; */
+}
+
+.track li {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  border-radius: 5px;
+}
+
+.track li:hover {
+  background-color: rgb(26, 26, 26);
+  cursor: pointer;
+}
+
+.track li:active {
+  /* background-color: rgb(54, 54, 54); */
+  background-color: #232323;
+}
+
+.track div {
+  flex: 1;
+}
+
+.show-album-art {
+  max-width: 48px;
+  max-height: 48px;
+  border-radius: 5px;
+}
+
+.track-title {
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .song-artist-name {
@@ -76,9 +112,4 @@
 
 .track .track-number {
   text-align: center;
-}
-
-.track-title {
-  font-weight: bold;
-  font-size: 1.2rem;
 }

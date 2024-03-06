@@ -12,8 +12,6 @@ function Navigation() {
   } else {
     sessionLinks = (
       <>
-        <NavLink to="/main">Main</NavLink>
-        <NavLink to="/songs">Songs</NavLink>
         <NavLink to="/signup">Sign Up</NavLink>
         <NavLink to="/login">Log In</NavLink>
       </>

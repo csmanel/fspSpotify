@@ -32,8 +32,35 @@ const AlbumPage = () => {
     return <p>loading album....</p>;
   }
   return (
+    // <div className="album-display">
+    //   {/* image container? */}
+    //   <div className="album-header">
+    //     <img src={magdalenaCover} alt="" className="album-art" />
+    //     <div className="header-text">
+    //       <p className="label">Album</p>
+    //       <h1 className="album-text-header">{album.title}</h1>
+    //       <p className="info">
+    //         {album.artistName} &bull; {album.releaseDate.slice(0, 4)} &bull;{' '}
+    //         {album.songs.length} songs
+    //       </p>
+    //     </div>
+    //   </div>
+    //   <div className="song-list">
+    //     {album.songs?.map((song, trackNum) => (
+    //       <>
+    //         <ol className="track">
+    //           <li className="track-number" key={trackNum}>
+    //             {trackNum + 1}
+    //           </li>
+    //           {/* <img src={magdalenaCover} alt="" className="album-art" /> */}
+    //           <li className="track-title">{song.name}</li>
+    //         </ol>
+    //         <p className="song-artist-name">{album.artistName}</p>
+    //       </>
+    //     ))}
+    //   </div>
+    // </div>
     <div className="album-display">
-      {/* image container? */}
       <div className="album-header">
         <img src={magdalenaCover} alt="" className="album-art" />
         <div className="header-text">
@@ -45,19 +72,31 @@ const AlbumPage = () => {
           </p>
         </div>
       </div>
+      <div className="info-text">
+        <ol>
+          <li>#</li>
+          <li>Title</li>
+          <li>Duration</li>
+        </ol>
+      </div>
       <div className="song-list">
-        {album.songs?.map((song, trackNum) => (
-          <>
-            <ol className="track">
-              <li className="track-number" key={trackNum}>
-                {trackNum + 1}
+        <div className="track">
+          <ol>
+            {album.songs?.map((song, index) => (
+              <li key={index}>
+                <div>{index + 1}</div>
+                <img src={magdalenaCover} alt="" className="show-album-art" />
+                <div>
+                  <ol>
+                    <li>{song.name}</li>
+                    <li>{album.artistName}</li>
+                  </ol>
+                </div>
+                <div>{song.duration}</div>
               </li>
-              {/* <img src={magdalenaCover} alt="" className="album-art" /> */}
-              <li className="track-title">{song.name}</li>
-            </ol>
-            <p className="song-artist-name">{album.artistName}</p>
-          </>
-        ))}
+            ))}
+          </ol>
+        </div>
       </div>
     </div>
   );

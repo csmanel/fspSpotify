@@ -50,25 +50,28 @@ const PlaylistPage = () => {
           <li>#</li>
           <li>Title</li>
           <li>Album</li>
-          <li>duration</li>
+          <li>Duration</li>
         </ol>
       </div>
       <div className="song-list">
-        {playlist.songs?.map((song, trackNum) => (
-          <>
-            <ol className="track">
-              <li className="track-number" key={trackNum}>
-                {trackNum + 1}
+        <div className="track">
+          <ol>
+            {playlist.songs?.map((song, index) => (
+              <li key={index}>
+                <div>{index + 1}</div>
+                <img src={magdalenaCover} alt="" className="show-album-art" />
+                <div>
+                  <ol>
+                    <li>{song.name}</li>
+                    <li>{song.album.artist.artistName}</li>
+                  </ol>
+                </div>
+                <div>{song.album.title}</div>
+                <div>{song.duration}</div>
               </li>
-              <li className="track-title">{song.name}</li>
-            </ol>
-            <p className="song-artist-name">{playlist.artistName}</p>
-            <ol className="trackAlbum">
-              <li>{song.album.title}</li>
-              <li>{song.duration}</li>
-            </ol>
-          </>
-        ))}
+            ))}
+          </ol>
+        </div>
       </div>
     </div>
   );
