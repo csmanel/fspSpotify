@@ -25,12 +25,37 @@
   align-items: flex-start;
   margin-left: 0.4rem;
 }
+
+.library-index-item {
+  /* display: flex; */
+}
+
+.index-art {
+  max-width: 48px;
+  max-height: 48px;
+  border-radius: 5px;
+}
+
 .album-box {
-  width: 250px;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  width: 95%;
   display: flex;
   align-items: center;
-  height: 3rem;
+  height: 4rem;
   border-radius: 5px;
+}
+.album-text {
+  margin-left: 0.7rem;
+  text-decoration: none;
+  color: white;
+}
+
+.album-text p {
+  margin-top: 0.5rem;
+  color: rgb(153, 153, 153);
 }
 .album-box:hover {
   background-color: rgb(26, 26, 26);
@@ -38,10 +63,7 @@
 }
 
 .album-box:active {
-  background-color: rgb(66, 66, 66);
-}
-
-.album-text {
-  text-decoration: none;
-  color: white;
+  /* this is what the color should be if it is the current playlist or album */
+  /* background-color: rgb(66, 66, 66); */
+  background-color: #000000;
 }

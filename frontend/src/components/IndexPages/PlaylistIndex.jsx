@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { csrfFetch } from '../../store/csrf';
 import { receivePlaylists } from '../../store/playlist';
 import '../mainPage/Library.css';
+import magdalenaCover from '../../data/images/magdalenaCover.png';
 
 const PlaylistIndex = () => {
   const dispatch = useDispatch();
@@ -32,15 +33,20 @@ const PlaylistIndex = () => {
 
   return (
     <div>
-      <ul>
+      <ul className="library-index-item">
         {playlists.map((playlist) => (
-          <div>
-            <Link to={`/playlists/${playlist.id}`} className="album-text">
-              <li key={playlist.id} className="album-box">
-                {playlist.name}
-              </li>
-            </Link>
-          </div>
+          <Link
+            to={`/playlists/${playlist.id}`}
+            className="album-box"
+            style={{ textDecoration: 'none' }}
+            key={playlist.id}
+          >
+            <img src={magdalenaCover} alt="" className="index-art" />
+            <div className="album-text">
+              <li key={playlist.id}>{playlist.name}</li>
+              <p>Playlist</p>
+            </div>
+          </Link>
         ))}
       </ul>
     </div>
