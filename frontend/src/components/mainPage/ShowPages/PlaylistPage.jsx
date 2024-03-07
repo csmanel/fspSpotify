@@ -1,10 +1,9 @@
 import { useDispatch } from 'react-redux';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { csrfFetch } from '../../../store/csrf';
 import { receivePlaylist } from '../../../store/playlist';
 import magdalenaCover from '../../../data/images/magdalenaCover.png';
-
 import './AlbumPage.css';
 
 const PlaylistPage = () => {
@@ -12,6 +11,7 @@ const PlaylistPage = () => {
 
   const { id } = useParams();
   const [playlist, setPlaylist] = useState(null);
+  const audioRef = useRef(null);
 
   const fetchPlaylist = async (id) => {
     const response = await csrfFetch(`/api/playlists/${id}`);
@@ -33,6 +33,13 @@ const PlaylistPage = () => {
     return <p>loading playlist....</p>;
   }
 
+  const handleAudioRef = (i) => {
+    if (audioRef.current) {
+      audioRef.current.src = playlist.songs[i].audioUrl;
+      audioRef.current.play();
+    }
+  };
+
   return (
     <div className="album-display">
       <div className="album-header">
@@ -47,18 +54,18 @@ const PlaylistPage = () => {
       </div>
       <div className="info-text">
         <ol>
-          <li>#</li>
-          <li>Title</li>
-          <li>Album</li>
-          <li>Duration</li>
+          <li className="info-track-num">#</li>
+          <li className="info-track-title">Title</li>
+          <li className="info-track-album">Album</li>
+          <li className="info-track-duration">Duration</li>
         </ol>
       </div>
       <div className="song-list">
         <div className="track">
           <ol>
             {playlist.songs?.map((song, index) => (
-              <li key={index}>
-                <div>{index + 1}</div>
+              <li key={index} onClick={() => handleAudioRef(song)}>
+                <div className="song-index">{index + 1}</div>
                 <img src={magdalenaCover} alt="" className="show-album-art" />
                 <div>
                   <ol>
@@ -66,7 +73,7 @@ const PlaylistPage = () => {
                     <li>{song.album.artist.artistName}</li>
                   </ol>
                 </div>
-                <div>{song.album.title}</div>
+                <div className="album-title">{song.album.title}</div>
                 <div>{song.duration}</div>
               </li>
             ))}
