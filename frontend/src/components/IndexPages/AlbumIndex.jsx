@@ -36,7 +36,7 @@ const AlbumIndex = () => {
             style={{ textDecoration: 'none' }}
             key={album.id}
           >
-            <img src={magdalenaCover} alt="" className="index-art" />
+            <img src={album.imgUrl} alt="" className="index-art" />
             <div className="album-text">
               <li key={album.id}>{album.title}</li>
               <p>Album &bull; {album.artistName}</p>

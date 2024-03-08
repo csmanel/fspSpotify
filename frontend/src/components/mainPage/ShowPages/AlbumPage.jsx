@@ -27,13 +27,15 @@ const AlbumPage = () => {
     fetchAlbum(id);
   }, [id]);
 
+  console.log(album);
+
   if (!album) {
     return <p>loading album....</p>;
   }
   return (
     <div className="album-display">
       <div className="album-header">
-        <img src={magdalenaCover} alt="" className="album-art" />
+        <img src={album.imgUrl} alt="" className="album-art" />
         <div className="header-text">
           <p className="label">Album</p>
           <h1 className="album-text-header">{album.title}</h1>
@@ -56,7 +58,7 @@ const AlbumPage = () => {
             {album.songs?.map((song, index) => (
               <li key={index}>
                 <div className="song-index">{index + 1}</div>
-                <img src={magdalenaCover} alt="" className="show-album-art" />
+                <img src={album.imgUrl} alt="" className="show-album-art" />
                 <div>
                   <ol>
                     <li>{song.name}</li>

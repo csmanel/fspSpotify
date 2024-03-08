@@ -66,7 +66,11 @@ const PlaylistPage = () => {
             {playlist.songs?.map((song, index) => (
               <li key={index} onClick={() => handleAudioRef(song)}>
                 <div className="song-index">{index + 1}</div>
-                <img src={magdalenaCover} alt="" className="show-album-art" />
+                <img
+                  src={song.album.imgUrl}
+                  alt=""
+                  className="show-album-art"
+                />
                 <div>
                   <ol>
                     <li>{song.name}</li>

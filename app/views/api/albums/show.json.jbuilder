@@ -1,5 +1,5 @@
 json.album do 
-  json.extract! @album, :id, :artist_id, :title, :release_date
+  json.extract! @album, :id, :artist_id, :title, :release_date, :img_url
   json.artist_name @album.artist.artist_name
   json.songs @album.songs do |song|
     json.extract! song, :id, :name, :duration, :track_num
