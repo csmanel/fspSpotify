@@ -1,6 +1,6 @@
 
 json.playlist do 
-  json.extract! @playlist, :id, :user_id, :name
+  json.extract! @playlist, :id, :user_id, :name, :img_url
   json.user @playlist.user, :id, :username
 
   json.songs @playlist.songs do |song|

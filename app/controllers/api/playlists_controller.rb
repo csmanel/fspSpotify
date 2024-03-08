@@ -2,7 +2,7 @@ class Api::PlaylistsController < ApplicationController
 
   def index 
     @playlists = Playlist.all 
-    render json: @playlists
+    render :index
   end 
 
   def create 
@@ -34,7 +34,7 @@ class Api::PlaylistsController < ApplicationController
 
   private 
   def playlist_params
-    params.require(:playlist).permit(:user_id, :id, :name)
+    params.require(:playlist).permit(:user_id, :id, :name, :img_url)
   end
 
 end

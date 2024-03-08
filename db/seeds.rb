@@ -178,14 +178,14 @@ require 'open-uri'
   #   )
   # end
   
-  playlist = Playlist.create!({
-    user_id: 1,
-    name: 'the first playlist',
-  })
+  # playlist = Playlist.create!({
+  #   user_id: 1,
+  #   name: 'the first playlist',
+  # })
 
-  puts 'adding songs to the first playlist'
-  first_playlist_songs = Song.where(album_id: [1,2])
-  playlist.songs << first_playlist_songs
+  # puts 'adding songs to the first playlist'
+  # first_playlist_songs = Song.where(album_id: [1,2])
+  # playlist.songs << first_playlist_songs
 
   10.times do
     Artist.create!(
@@ -220,15 +220,17 @@ require 'open-uri'
     end
   end
   
-  # Generate playlists
   10.times do
+    random_string = SecureRandom.hex(5)
+    img_url = "https://source.unsplash.com/400x400/?music&#{random_string}"
+
     Playlist.create!(
       user_id: Faker::Number.within(range: 1..10),
-      name: Faker::Lorem.words(number: 3).join(' ')
+      name: Faker::Lorem.words(number: 3).join(' '),
+      img_url: img_url
     )
   end
   
-  # Assign songs to playlists
   Playlist.all.each do |playlist|
     playlist.songs << Song.order("RANDOM()").limit(5)
   end

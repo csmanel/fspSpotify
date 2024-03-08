@@ -43,7 +43,7 @@ const PlaylistPage = () => {
   return (
     <div className="album-display">
       <div className="album-header">
-        <img src={magdalenaCover} alt="" className="album-art" />
+        <img src={playlist.imgUrl} alt="" className="album-art" />
         <div className="header-text">
           <p className="label">playlist</p>
           <h1 className="album-text-header">{playlist.name}</h1>

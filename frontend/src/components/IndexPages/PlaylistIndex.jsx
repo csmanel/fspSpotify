@@ -40,7 +40,7 @@ const PlaylistIndex = () => {
             style={{ textDecoration: 'none' }}
             key={playlist.id}
           >
-            <img src={magdalenaCover} alt="" className="index-art" />
+            <img src={playlist.imgUrl} alt="" className="index-art" />
             <div className="album-text">
               <li key={playlist.id}>{playlist.name}</li>
               <p>Playlist</p>
