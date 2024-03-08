@@ -13,14 +13,6 @@ const MainContainer = ({ type }) => {
       </div>
       <div className="main-right">
         <RightPanel type={type} />
-
-        {/* <Routes>
-          <Route path="/albums/:id" element={<RightPanel type={'album'} />} />
-          <Route
-            path="/playlists/:id"
-            element={<RightPanel type={'playlist'} />}
-          />
-        </Routes> */}
       </div>
     </div>
   );

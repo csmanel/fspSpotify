@@ -198,13 +198,13 @@ require 'open-uri'
   
   Artist.all.each do |artist|
     2.times do
-      img_url = "https://source.unsplash.com/400x400/?music"
+      img_url = "https://source.unsplash.com/400x400/?music,#{artist.artist_name.gsub(' ', '+')}"
   
       album = Album.create!(
         artist_id: artist.id,
         title: Faker::Music.album,
         duration: Faker::Number.within(range: 30..120),
-        release_date: Faker::Date.between(from: 10.years.ago, to: Date.today),
+        release_date: Faker::Date.between(from: 50.years.ago, to: Date.today),
         img_url: img_url
       )
   

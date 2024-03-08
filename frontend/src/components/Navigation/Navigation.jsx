@@ -20,10 +20,7 @@ function Navigation() {
 
   return (
     <ul>
-      <li>
-        <NavLink to="/">Home</NavLink>
-        {sessionLinks}
-      </li>
+      <li>{sessionLinks}</li>
     </ul>
   );
 }

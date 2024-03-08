@@ -8,13 +8,14 @@ const REMOVE_PLAYLIST = 'playlists/removePlaylist';
 const ADD_SONG = 'playlists/addSong';
 const REMOVE_SONG = 'playlists/removeSong';
 
-export const receivePlaylists = (data) => ({
-  type: RECEIVE_PLAYLISTS,
-  playlists: data,
-});
+export const receivePlaylists = (data) => {
+  return {
+    type: RECEIVE_PLAYLISTS,
+    playlists: data,
+  };
+};
 
 export const receivePlaylist = (data) => {
-  console.log(data);
   return {
     type: RECEIVE_PLAYLIST,
     playlist: data,
@@ -47,6 +48,18 @@ const removeSong = (playlistId, songId) => ({
   playlistId,
   songId,
 });
+
+export const fetchPlaylists = async () => {
+  const response = await csrfFetch('/api/playlists');
+
+  if (response.ok) {
+    const data = await response.json();
+    // setPlaylists(data);
+    dispatch(receivePlaylists(data));
+  } else {
+    console.error('Error fetching playlists:', response.statusText);
+  }
+};
 
 export const fetchCreatePlaylist = (playlist) => async (dispatch) => {
   const response = await csrfFetch('/api/playlists', {
