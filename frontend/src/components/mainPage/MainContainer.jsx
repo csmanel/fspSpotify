@@ -4,7 +4,7 @@ import Library from './Library';
 import './MainContainer.css';
 import RightPanel from './RightPanel';
 
-const MainContainer = () => {
+const MainContainer = ({ type }) => {
   return (
     <div className="main-container">
       <div className="main-left">
@@ -12,10 +12,7 @@ const MainContainer = () => {
         <Library />
       </div>
       <div className="main-right">
-        <RightPanel />
-        <Routes>
-          <Route path="/albums/:id"></Route>
-        </Routes>
+        <RightPanel type={type} />
       </div>
     </div>
   );

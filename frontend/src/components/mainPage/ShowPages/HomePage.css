@@ -1,0 +1,39 @@
+.home-album-grid {
+  display: flex;
+  height: 200px;
+}
+
+.home-album-grid ul {
+  margin-top: 5rem;
+  margin-left: 2rem;
+  width: 1450px;
+  height: 150px;
+  gap: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.home-album-card {
+  height: 64px;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 5px;
+  display: flex;
+  width: 353px;
+  color: blue;
+  align-items: center;
+  background-color: rgba(82, 82, 82, 0.322);
+}
+
+.home-index-art {
+  border-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  height: 64px;
+  width: 64px;
+}
+
+.home-album-card:hover {
+  background-color: rgba(121, 121, 121, 0.322);
+}

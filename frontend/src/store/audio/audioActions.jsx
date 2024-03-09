@@ -62,7 +62,6 @@ export const setVolume = (volume) => ({
   volume,
 });
 export const setCurrentSong = (song) => ({
-  // console.log('Current Song being set', song)
   type: SET_CURRENT_SONG,
   song,
 });

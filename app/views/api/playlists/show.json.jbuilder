@@ -1,14 +1,18 @@
+
 json.playlist do 
-  json.extract! @playlist, :id, :username_id, :playlist_name
-  json.user @playlist.user do |user| 
-    json.extract! user, :id, :username 
-  end
+  json.extract! @playlist, :id, :user_id, :name, :img_url
+  json.user @playlist.user, :id, :username
+
   json.songs @playlist.songs do |song|
-    json.extract! song, :id, :name, :duraction, :track_num 
+    json.extract! song, :id, :name, :duration
+
     json.album do 
-      json.extract! song.album, :id, :title
-      json.artist_name song.album.artist.artist_name
+      json.extract! song.album, :id, :title, :release_date, :img_url
+      json.artist do 
+        json.extract! song.album.artist, :id, :artist_name
+      end
     end
   end
 end
+
 

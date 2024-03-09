@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import { receiveAlbum } from '../../../store/album';
 import { csrfFetch } from '../../../store/csrf';
 import magdalenaCover from '../../../data/images/magdalenaCover.png';
-import caretakerCover from '../../../data/images/caretakerCover.jpg';
 import './AlbumPage.css';
 
 const AlbumPage = () => {
@@ -24,20 +23,19 @@ const AlbumPage = () => {
     }
   };
 
-  console.log(album);
-
   useEffect(() => {
     fetchAlbum(id);
   }, [id]);
+
+  console.log(album);
 
   if (!album) {
     return <p>loading album....</p>;
   }
   return (
     <div className="album-display">
-      {/* image container? */}
       <div className="album-header">
-        <img src={magdalenaCover} alt="" className="album-art" />
+        <img src={album.imgUrl} alt="" className="album-art" />
         <div className="header-text">
           <p className="label">Album</p>
           <h1 className="album-text-header">{album.title}</h1>
@@ -47,19 +45,31 @@ const AlbumPage = () => {
           </p>
         </div>
       </div>
+      <div className="info-text">
+        <ol>
+          <li className="info-track-num">#</li>
+          <li className="info-track-title">Title</li>
+          <li className="info-track-duration">Duration</li>
+        </ol>
+      </div>
       <div className="song-list">
-        {album.songs?.map((song, trackNum) => (
-          <>
-            <ol className="track">
-              <li className="track-number" key={trackNum}>
-                {trackNum + 1}
+        <div className="track">
+          <ol>
+            {album.songs?.map((song, index) => (
+              <li key={index}>
+                <div className="song-index">{index + 1}</div>
+                <img src={album.imgUrl} alt="" className="show-album-art" />
+                <div>
+                  <ol>
+                    <li>{song.name}</li>
+                    <li>{album.artistName}</li>
+                  </ol>
+                </div>
+                <div>{song.duration}</div>
               </li>
-              {/* <img src={magdalenaCover} alt="" className="album-art" /> */}
-              <li className="track-title">{song.name}</li>
-            </ol>
-            <p className="song-artist-name">{album.artistName}</p>
-          </>
-        ))}
+            ))}
+          </ol>
+        </div>
       </div>
     </div>
   );

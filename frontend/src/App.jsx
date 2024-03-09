@@ -39,17 +39,14 @@ const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
-      {
-        path: '/',
-        element: <MainContainer />,
-      },
+      //this is prop drilling and its not good
       {
         path: '/albums/:id',
-        element: <MainContainer />,
+        element: <MainContainer type={'album'} />,
       },
       {
         path: '/playlists/:id',
-        element: <MainContainer />,
+        element: <MainContainer type={'playlist'} />,
       },
       {
         path: '/songs',
@@ -62,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: 'signup',
         element: <SignupForm />,
+      },
+      {
+        path: '/',
+        element: <MainContainer type={'home'} />,
       },
     ],
   },

@@ -2,7 +2,7 @@ class Api::PlaylistsController < ApplicationController
 
   def index 
     @playlists = Playlist.all 
-    render json: @playlists
+    render :index
   end 
 
   def create 
@@ -28,13 +28,13 @@ class Api::PlaylistsController < ApplicationController
   end
     
   def show 
-    @playlist = Playlist.find(params[:id])
+    @playlist = Playlist.includes(:songs).find(params[:id])
     render :show
   end
 
   private 
   def playlist_params
-    params.require(:playlist).permit(:username_id, :playlist_id, :playlist_name)
+    params.require(:playlist).permit(:user_id, :id, :name, :img_url)
   end
 
 end
