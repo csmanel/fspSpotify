@@ -44,11 +44,19 @@
   color: #888;
 }
 
-.grid-container {
+.grid-container,
+.playlist-grid-container {
   color: rgba(255, 255, 255, 0.856);
   display: grid;
-  grid-template-columns: auto auto auto;
   grid-gap: 10px;
+  align-items: center;
+}
+.grid-container {
+  grid-template-columns: 1rem auto auto;
+}
+
+.playlist-grid-container {
+  grid-template-columns: 1rem auto auto auto;
 }
 
 .grid-header {
@@ -71,6 +79,12 @@
 .artist-name,
 .song-duration {
   color: #888;
+}
+
+.playlist-song-details {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
 }
 
 .show-album-art {

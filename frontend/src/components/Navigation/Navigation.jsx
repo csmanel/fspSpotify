@@ -12,17 +12,17 @@ function Navigation() {
   } else {
     sessionLinks = (
       <>
-        <NavLink to="/signup">Sign Up</NavLink>
-        <NavLink to="/login">Log In</NavLink>
+        <button className="sign-up-btn">
+          <NavLink to="/signup">Sign Up</NavLink>
+        </button>
+        <button className="login-btn">
+          <NavLink to="/login">Log In</NavLink>
+        </button>
       </>
     );
   }
 
-  return (
-    <ul>
-      <li>{sessionLinks}</li>
-    </ul>
-  );
+  return <div className="session-link-container">{sessionLinks}</div>;
 }
 
 export default Navigation;

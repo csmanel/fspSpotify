@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { receiveAlbum } from '../../../store/album';
 import { csrfFetch } from '../../../store/csrf';
-import magdalenaCover from '../../../data/images/magdalenaCover.png';
+import { formatDuration } from '../../helpers/durationConverter';
 import './AlbumPage.css';
 
 const AlbumPage = () => {
@@ -56,7 +56,7 @@ const AlbumPage = () => {
               <div>{song.name}</div>
               <div className="artist-name">{album.artistName}</div>
             </div>
-            <div className="song-duration">{song.duration}</div>
+            <div className="song-duration">{formatDuration(song.duration)}</div>
           </div>
         ))}
       </div>

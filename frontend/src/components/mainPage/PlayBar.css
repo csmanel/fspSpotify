@@ -7,10 +7,6 @@
   justify-content: center;
 }
 
-.player-controls {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 1.75rem;
-  margin-bottom: 0.25rem;
+.inner {
+  width: 100%;
 }

@@ -1,0 +1,54 @@
+.session-link-container {
+  margin-top: 0.7rem;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.session-link-container a {
+  text-decoration: none;
+}
+
+.session-link-container button {
+  border-radius: 50px;
+  height: 48px;
+  width: 100px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.sign-up-btn {
+  background-color: #1212129c;
+}
+
+.login-btn {
+  background-color: #fff;
+  color: #383838;
+}
+
+.login-btn:active {
+  background-color: #b7b7b7;
+}
+
+.sign-up-btn:hover,
+.login-btn:hover {
+  transform: scale(1.05);
+}
+
+.sign-up-btn a {
+  color: #808080;
+}
+
+.sign-up-btn:hover a {
+  color: #dadada;
+}
+
+.login-btn a {
+  color: #3f3f3f;
+}
+
+.login-btn:hover {
+  background-color: #e6e6e6;
+}

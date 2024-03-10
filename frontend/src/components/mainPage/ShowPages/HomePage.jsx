@@ -5,6 +5,7 @@ import { receiveAlbums } from '../../../store/album';
 import { Link, useParams } from 'react-router-dom';
 import './HomePage.css';
 import YourPlaylists from './YourPlaylists';
+import Navigation from '../../Navigation';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -28,7 +29,9 @@ const HomePage = () => {
 
   return (
     <div className="home-page-container">
+      <Navigation />
       <div className="home-album-grid">
+        <h1>Your Albums</h1>
         <ul>
           {albums.slice(0, 8).map((album) => (
             <Link

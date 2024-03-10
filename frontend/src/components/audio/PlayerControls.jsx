@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
 import {
   togglePlayPause,
   playNext,
@@ -6,10 +7,8 @@ import {
   toggleShuffle,
   clearQueue,
   // setQueue,
-  setVolume,
 } from '../../store/audio/audioActions';
-
-//icons
+import { FaPlayCircle, FaPauseCircle } from 'react-icons/fa';
 import {
   IoPlayBackSharp,
   IoPlayForwardSharp,
@@ -18,12 +17,12 @@ import {
   IoPlaySharp,
   IoPauseSharp,
 } from 'react-icons/io5';
+import './PlayerControls.css';
 
-const PlayerControls = ({ audioRef }) => {
+const PlayerControls = ({ audioRef, currentVolume, onVolumeChange }) => {
   const dispatch = useDispatch();
   const isPlaying = useSelector((state) => state.audio.toggleIsPlaying);
   const isShuffled = useSelector((state) => state.audio.toggleShuffle);
-  const currentVolume = useSelector((state) => state.audio.volume);
 
   const handlePlayPause = () => {
     dispatch(togglePlayPause());
@@ -50,35 +49,42 @@ const PlayerControls = ({ audioRef }) => {
   //   dispatch(setQueue(newQueue));
   // };
 
-  const handleSetVolume = (newVolume) => {
-    dispatch(setVolume(newVolume));
-  };
-
   return (
     <div className="player-controls">
-      <button onClick={handlePrevious}>
-        <IoPlaySkipBackSharp />
-      </button>
-      <button onClick={handlePlayPause}>
-        {isPlaying ? <IoPauseSharp /> : <IoPlaySharp />}
-      </button>
-      <button onClick={handleNext}>
-        <IoPlaySkipForwardSharp />
-      </button>
-      <button onClick={handleToggleShuffle}>
+      <div> album goes here</div>
+      <div className="center-controls">
+        <button onClick={handlePrevious}>
+          <IoPlaySkipBackSharp className="icon previous" />
+        </button>
+        <button onClick={handlePlayPause}>
+          {isPlaying ? (
+            <FaPauseCircle className="icon pause" />
+          ) : (
+            <FaPlayCircle className="icon play" />
+          )}
+        </button>
+        <button onClick={handleNext}>
+          <IoPlaySkipForwardSharp className="icon next" />
+        </button>
+        {/* <button onClick={handleToggleShuffle}>
         {isShuffled ? 'Disable Shuffle' : 'Enable Shuffle'}
-      </button>
-      <button onClick={handleClearQueue}>
+      </button> */}
+        {/* <button onClick={handleClearQueue}>
         <IoPlayForwardSharp />
-      </button>
-      <input
-        type="range"
-        min="0"
-        max="100"
-        step="1"
-        value={currentVolume}
-        onChange={(e) => handleSetVolume(e.target.value)}
-      />
+      </button> */}
+      </div>
+      <div className="right-controls">
+        <input
+          type="range"
+          min="0"
+          max="100"
+          step="1"
+          value={currentVolume}
+          onChange={(e) => {
+            onVolumeChange(e.target.value);
+          }}
+        />
+      </div>
     </div>
   );
 };

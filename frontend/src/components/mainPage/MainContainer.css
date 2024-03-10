@@ -13,7 +13,8 @@
 }
 
 .main-right {
+  padding-top: 0.4rem;
   display: flex;
   width: 79vw;
-  margin-left: 10px;
+  margin: 5px 5px 5px 5px;
 }
