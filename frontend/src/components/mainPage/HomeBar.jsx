@@ -4,10 +4,9 @@ import { NavLink } from 'react-router-dom';
 const HomeBar = () => {
   return (
     <div className="homebar-container">
-      <p>
+      <h1>
         <NavLink to="/">Home</NavLink>
-      </p>
-      <p>Search</p>
+      </h1>
     </div>
   );
 };

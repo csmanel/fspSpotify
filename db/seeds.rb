@@ -220,7 +220,7 @@ require 'open-uri'
     end
   end
   
-  10.times do
+  20.times do
     random_string = SecureRandom.hex(5)
     img_url = "https://source.unsplash.com/400x400/?music&#{random_string}"
 

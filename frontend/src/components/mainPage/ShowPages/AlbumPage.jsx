@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { receiveAlbum } from '../../../store/album';
 import { csrfFetch } from '../../../store/csrf';
-import magdalenaCover from '../../../data/images/magdalenaCover.png';
+import { formatDuration } from '../../helpers/formatDuration';
 import './AlbumPage.css';
 
 const AlbumPage = () => {
@@ -45,31 +45,20 @@ const AlbumPage = () => {
           </p>
         </div>
       </div>
-      <div className="info-text">
-        <ol>
-          <li className="info-track-num">#</li>
-          <li className="info-track-title">Title</li>
-          <li className="info-track-duration">Duration</li>
-        </ol>
-      </div>
-      <div className="song-list">
-        <div className="track">
-          <ol>
-            {album.songs?.map((song, index) => (
-              <li key={index}>
-                <div className="song-index">{index + 1}</div>
-                <img src={album.imgUrl} alt="" className="show-album-art" />
-                <div>
-                  <ol>
-                    <li>{song.name}</li>
-                    <li>{album.artistName}</li>
-                  </ol>
-                </div>
-                <div>{song.duration}</div>
-              </li>
-            ))}
-          </ol>
-        </div>
+      <div className="grid-container">
+        <div className="grid-header">#</div>
+        <div className="grid-header">title</div>
+        <div className="grid-header">duration</div>
+        {album.songs?.map((song, index) => (
+          <div className="track" key={index}>
+            <div className="song-track">{index + 1}</div>
+            <div className="song-details">
+              <div>{song.name}</div>
+              <div className="artist-name">{album.artistName}</div>
+            </div>
+            <div className="song-duration">{formatDuration(song.duration)}</div>
+          </div>
+        ))}
       </div>
     </div>
   );

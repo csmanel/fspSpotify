@@ -1,0 +1,54 @@
+.player-controls {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.player-controls button {
+  border: none;
+  background: none;
+  color: white;
+}
+
+.player-controls:hover button {
+  cursor: pointer;
+}
+
+.center-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.seekbar-container {
+  display: flex;
+  align-items: center;
+}
+
+.icon.previous,
+.icon.next {
+  font-size: 25px;
+  color: rgb(163, 163, 163);
+}
+
+.icon.play,
+.icon.pause {
+  font-size: 32px;
+}
+
+.icon.previous:hover,
+.icon.next:hover {
+  color: white;
+}
+
+#seekbar {
+  width: 400px;
+}

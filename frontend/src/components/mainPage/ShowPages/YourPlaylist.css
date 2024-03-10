@@ -1,0 +1,40 @@
+.card-index h1 {
+  padding: 5rem 0 0 2rem;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.playlist-card-container {
+  padding-top: 1rem;
+  padding-left: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-items li {
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: white;
+}
+
+.playlist-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  height: 225px;
+  width: 190px;
+}
+
+.playlist-card:hover {
+  background-color: #252525c4;
+}
+
+.playlist-card-img {
+  box-shadow: 0 0px 9px rgba(0, 0, 0, 0.486);
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+  height: 165px;
+  width: 165px;
+  border-radius: 5px;
+}

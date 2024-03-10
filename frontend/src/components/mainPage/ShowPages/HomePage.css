@@ -1,10 +1,15 @@
+.home-page-container {
+  overflow: auto;
+}
+
 .home-album-grid {
   display: flex;
+  flex-direction: column;
   height: 200px;
 }
 
 .home-album-grid ul {
-  margin-top: 5rem;
+  margin-top: 2rem;
   margin-left: 2rem;
   width: 1450px;
   height: 150px;
@@ -14,6 +19,12 @@
   flex-wrap: wrap;
 }
 
+.home-album-grid h1 {
+  margin: 2rem 0 0 2rem;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
 .home-album-card {
   height: 64px;
   font-weight: bold;
@@ -21,7 +32,6 @@
   border-radius: 5px;
   display: flex;
   width: 353px;
-  color: blue;
   align-items: center;
   background-color: rgba(82, 82, 82, 0.322);
 }

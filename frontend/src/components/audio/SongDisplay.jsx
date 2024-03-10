@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { receiveSong, togglePlayPause } from '../../store/audio/audioActions';
 
-export default function SongDisplay({ currentSong, audioRef }) {
+export default function SongDisplay({ currentSong, audioRef, currentVolume }) {
   const dispatch = useDispatch();
 
   const currentAlbum = useSelector((state) => state.audio.currentAlbum);
@@ -56,16 +56,19 @@ export default function SongDisplay({ currentSong, audioRef }) {
 
   return (
     <div className="song-display">
-      <audio src={test_src} ref={audioRef} />
+      <audio
+        id="audio-player"
+        src={test_src}
+        ref={audioRef}
+        volume={currentVolume}
+      />
       <div>
         <div className="song-img">
           {currentSong.thumbnail ? (
             <img src={currentSong.thumbnail} alt="song avatar" />
           ) : (
             <div className="icon-wrapper">
-              <span className="song-icon">
-                <BsMusicNoteBeamed />
-              </span>
+              <span className="song-icon"></span>
             </div>
           )}
         </div>
