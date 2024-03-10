@@ -1,3 +1,7 @@
+.home-page-container {
+  overflow: auto;
+}
+
 .home-album-grid {
   display: flex;
   height: 200px;
@@ -21,7 +25,6 @@
   border-radius: 5px;
   display: flex;
   width: 353px;
-  color: blue;
   align-items: center;
   background-color: rgba(82, 82, 82, 0.322);
 }

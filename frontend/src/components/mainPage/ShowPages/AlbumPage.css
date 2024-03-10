@@ -44,98 +44,37 @@
   color: #888;
 }
 
-.info-text {
-  display: flex;
-  gap: 1rem;
+.grid-container {
+  color: rgba(255, 255, 255, 0.856);
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
 }
 
-.info-text ol {
-  display: flex;
-}
-
-.info-text li {
-  /* margin-right: 10rem; */
-  color: #5c5c5c;
-  font-size: 15px;
+.grid-header {
   font-weight: bold;
-  padding-bottom: 1rem;
+  border-bottom: 1px solid #cccccc31;
 }
 
-.info-track-num {
-  padding-left: 0.6rem;
+.track {
+  display: contents;
+  grid-column: 1;
+  font-weight: bold;
+  font-size: 15px;
 }
 
-.info-track-title {
-  padding-left: 1.5rem;
+.track:hover > * {
+  background-color: #555555c9;
 }
 
-.info-track-album {
-  padding-left: 40rem;
-}
-
-.info-track-duration {
-  padding-left: 37rem;
-}
-
-.song-list {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  border-top: 1px solid #cccccc31;
-}
-
-.track ol {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.track li {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  border-radius: 5px;
-  align-items: center;
-}
-
-.track li:hover {
-  background-color: rgb(26, 26, 26);
-  cursor: pointer;
-}
-
-.track li:active {
-  background-color: #232323;
-}
-
-.track div {
-  /* flex: 1; */
-}
-
-.song-index {
-  /* padding-right: ; */
-  width: 1.2rem;
+.song-track,
+.artist-name,
+.song-duration {
+  color: #888;
 }
 
 .show-album-art {
   max-width: 48px;
   max-height: 48px;
   border-radius: 5px;
-}
-
-.album-title {
-  padding-left: 20rem;
-}
-
-.track-title {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-.song-artist-name {
-  margin-left: 25px;
-}
-
-.track .track-number {
-  text-align: center;
 }

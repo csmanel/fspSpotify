@@ -3,9 +3,8 @@ import { useState, useEffect } from 'react';
 import { csrfFetch } from '../../../store/csrf';
 import { receiveAlbums } from '../../../store/album';
 import { Link, useParams } from 'react-router-dom';
-import TopMixes from './TopMixes';
-import YourMixes from './YourMixes';
 import './HomePage.css';
+import YourPlaylists from './YourPlaylists';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -46,10 +45,7 @@ const HomePage = () => {
           ))}
         </ul>
       </div>
-      <h1>Your top mixes</h1>
-      <TopMixes />
-      <h1>Made for you</h1>
-      <YourMixes />
+      <YourPlaylists />
     </div>
   );
 };
