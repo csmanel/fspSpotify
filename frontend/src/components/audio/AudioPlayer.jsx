@@ -8,6 +8,7 @@ const AudioPlayer = () => {
   const [currentVolume, setCurrentVolume] = useState(50);
 
   const handleVolumeChange = (newVolume) => {
+    console.log('V ol mue');
     const player = document.getElementById('audio-player');
     player.volume = newVolume / 100;
     setCurrentVolume(parseInt(newVolume));

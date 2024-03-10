@@ -17,7 +17,20 @@
 
 .center-controls {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top-controls {
+  display: flex;
   gap: 1rem;
+  align-items: center;
+}
+
+.seekbar-container {
+  display: flex;
+  align-items: center;
 }
 
 .icon.previous,
@@ -34,4 +47,8 @@
 .icon.previous:hover,
 .icon.next:hover {
   color: white;
+}
+
+#seekbar {
+  width: 400px;
 }

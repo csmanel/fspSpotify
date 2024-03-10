@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { csrfFetch } from '../../../store/csrf';
 import { receivePlaylist } from '../../../store/playlist';
-import { formatDuration } from '../../helpers/durationConverter';
+import { formatDuration } from '../../helpers/formatDuration';
 import './AlbumPage.css';
 
 const PlaylistPage = () => {

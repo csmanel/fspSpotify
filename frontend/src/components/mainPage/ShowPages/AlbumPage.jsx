@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { receiveAlbum } from '../../../store/album';
 import { csrfFetch } from '../../../store/csrf';
-import { formatDuration } from '../../helpers/durationConverter';
+import { formatDuration } from '../../helpers/formatDuration';
 import './AlbumPage.css';
 
 const AlbumPage = () => {
