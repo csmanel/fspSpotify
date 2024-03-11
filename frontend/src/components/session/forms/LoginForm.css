@@ -1,5 +1,4 @@
-/* Page Background */
-.login-form-page-bg {
+.login-bg {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,7 +22,6 @@ label {
   padding: 0;
 }
 
-/* Form Background */
 .form-bg {
   background-color: #000000;
   border-radius: 0.5rem;
@@ -34,21 +32,26 @@ label {
   justify-content: center;
 }
 
-.login-link-hover {
+.form-container h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  padding-bottom: 4rem;
+}
+
+.login-link {
   margin-top: 1rem;
 }
 
-.login-link-hover a {
+.login-link a {
   color: white;
   text-decoration: underline;
 }
 
-.login-link-hover a:hover {
+.login-link a:hover {
   color: #1db954;
 }
 
-/* New User Container */
-.new-user-container {
+.login-container {
   display: flex;
   flex-direction: column;
   align-items: center;

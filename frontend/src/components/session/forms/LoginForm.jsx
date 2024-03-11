@@ -51,10 +51,10 @@ function LoginForm() {
 
   return (
     <>
-      <div className="login-form-page-bg">
+      <div className="login-bg">
         <div className="form-bg">
           <div className="form-container">
-            <h1 className="header-container">Log in to fspSpotify</h1>
+            <h1>Log in to fspSpotify</h1>
             <form onSubmit={handleSubmit}>
               <ul>
                 {errors.map((error, index) => (
@@ -84,9 +84,9 @@ function LoginForm() {
               <button type="submit">Log In</button>
             </form>
 
-            <div className="new-user-container">
+            <div className="login-container">
               <p>Don&apos;t have an account?</p>
-              <p className="login-link-hover"></p>
+              <p className="login-link"></p>
               <p
                 onClick={demoUser}
                 className="demo-user"

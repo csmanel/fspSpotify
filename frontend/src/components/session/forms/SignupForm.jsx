@@ -61,8 +61,8 @@ function SignupForm() {
   };
 
   return (
-    <div className="sign-up-bg">
-      <div className="sign-up-container">
+    <div className="signup-bg">
+      <div className="signup-container">
         <h1>Sign up to start listening</h1>
         <form onSubmit={handleSubmit}>
           <ul>
