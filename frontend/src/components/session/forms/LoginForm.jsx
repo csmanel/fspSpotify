@@ -74,9 +74,7 @@ function LoginForm() {
 
             <div className="new-user-container">
               <p>Don&apos;t have an account?</p>
-              <p className="login-link-hover">
-                {/* <Link to="/signup">Sign up for Motify</Link> */}
-              </p>
+              <p className="login-link-hover"></p>
               <p
                 onClick={demoUser}
                 className="demo-user"
