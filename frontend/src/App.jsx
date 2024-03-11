@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Outlet, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import LoginForm from './components/session/forms/LoginForm';
@@ -9,7 +9,7 @@ import AudioPlayer from './components/audio/AudioPlayer';
 import MainContainer from './components/mainPage/MainContainer';
 
 function Layout() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   //loaded state not working
 
   // useEffect(() => {

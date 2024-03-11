@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { csrfFetch } from '../../../store/csrf';
 import { receivePlaylist } from '../../../store/playlist';
@@ -11,7 +11,7 @@ const PlaylistPage = () => {
 
   const { id } = useParams();
   const [playlist, setPlaylist] = useState(null);
-  const audioRef = useRef(null);
+  // const audioRef = useRef(null);
 
   const fetchPlaylist = async (id) => {
     const response = await csrfFetch(`/api/playlists/${id}`);

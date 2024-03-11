@@ -1,14 +1,14 @@
 // import PlayerControls from './PlayerControls';
 // import { BsMusicNoteBeamed } from 'react-icons/bs';
 import test_src from '../../data/audioFile/magdalena/MAGDALENA_03_King_of_the_Blind_Master1WEB.mp3';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { receiveSong, togglePlayPause } from '../../store/audio/audioActions';
+// import { receiveSong, togglePlayPause } from '../../store/audio/audioActions';
 
 export default function SongDisplay({ currentSong, audioRef, currentVolume }) {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const currentAlbum = useSelector((state) => state.audio.currentAlbum);
+  // const currentAlbum = useSelector((state) => state.audio.currentAlbum);
   // const currentArtist = useSelector((state) => state.audio.currentArtist);
 
   const toggleIsPlaying = useSelector((state) => {

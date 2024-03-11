@@ -4,8 +4,8 @@ import {
   togglePlayPause,
   playNext,
   playPrevious,
-  toggleShuffle,
-  clearQueue,
+  // toggleShuffle,
+  // clearQueue,
   // setQueue,
 } from '../../store/audio/audioActions';
 import { FaPlayCircle, FaPauseCircle } from 'react-icons/fa';
@@ -29,6 +29,7 @@ const PlayerControls = ({ audioRef, currentVolume, onVolumeChange }) => {
   // const [duration, setDuration] = useState(0);
 
   const handlePlayPause = () => {
+    console.log(setCurrentTime);
     dispatch(togglePlayPause());
   };
 
