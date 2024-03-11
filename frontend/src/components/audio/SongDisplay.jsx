@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 // import { receiveSong, togglePlayPause } from '../../store/audio/audioActions';
 
-export default function SongDisplay({ currentSong, audioRef, currentVolume }) {
+export default function SongDisplay({ currentSong, audioRef }) {
   // const dispatch = useDispatch();
 
   // const currentAlbum = useSelector((state) => state.audio.currentAlbum);
@@ -60,7 +60,7 @@ export default function SongDisplay({ currentSong, audioRef, currentVolume }) {
         id="audio-player"
         src={test_src}
         ref={audioRef}
-        volume={currentVolume}
+        // volume={currentVolume}
       />
       <div>
         <div className="song-img">
