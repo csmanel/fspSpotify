@@ -9,9 +9,9 @@ fspSpotify is a clone (wip) of popular music  streaming website Spotify. Users c
 - Languages: Javascript, Ruby on Rails, HTML, CSS
 - Libraries: React, Redux
 - DataBase: PSQL
+- Hosting: Render 
 
 (not yet functional)
--Hosting: Render 
 -Storage: AWS (S3)
 
 # Functionality 
@@ -64,4 +64,3 @@ Users can play/pause, skip to previous and upcoming tracks.
 
 -Playlist Creation 
 -Search bar
--Dynamic ALbum Show page
