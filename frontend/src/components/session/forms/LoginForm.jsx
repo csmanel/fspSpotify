@@ -19,22 +19,34 @@ function LoginForm() {
     );
   };
 
+  const handleLogin = async () => {
+    try {
+      await dispatch(sessionActions.login({ credential, password }));
+    } catch (error) {
+      handleErrors(error);
+    }
+  };
+
+  const handleErrors = async (error) => {
+    let errorData;
+    try {
+      errorData = await error.clone().json();
+    } catch {
+      errorData = await error.text();
+    }
+    if (errorData?.errors) {
+      setErrors(errorData.errors);
+    } else if (errorData) {
+      setErrors([errorData]);
+    } else {
+      setErrors([error.statusText]);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
-    return dispatch(sessionActions.login({ credential, password })).catch(
-      async (res) => {
-        let data;
-        try {
-          data = await res.clone().json();
-        } catch {
-          data = await res.text();
-        }
-        if (data?.errors) setErrors(data.errors);
-        else if (data) setErrors([data]);
-        else setErrors([res.statusText]);
-      }
-    );
+    handleLogin();
   };
 
   return (
@@ -45,8 +57,8 @@ function LoginForm() {
             <h1 className="header-container">Log in to fspSpotify</h1>
             <form onSubmit={handleSubmit}>
               <ul>
-                {errors.map((error) => (
-                  <li key={error}>{error}</li>
+                {errors.map((error, index) => (
+                  <li key={index}>{error}</li>
                 ))}
               </ul>
               <label>
