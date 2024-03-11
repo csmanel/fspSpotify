@@ -1,3 +1,10 @@
+.background {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
 .login-bg {
   display: flex;
   flex-direction: column;
@@ -8,18 +15,6 @@
   min-height: 100vh;
   box-sizing: border-box;
   overflow: hidden;
-}
-
-label {
-  display: flex;
-  flex-direction: column;
-}
-
-.background {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
 }
 
 .form-bg {
@@ -38,6 +33,11 @@ label {
   padding-bottom: 4rem;
 }
 
+label {
+  display: flex;
+  flex-direction: column;
+}
+
 .login-link {
   margin-top: 1rem;
 }
@@ -45,6 +45,7 @@ label {
 .login-link a {
   color: white;
   text-decoration: underline;
+  transition: color 0.3s ease-in-out;
 }
 
 .login-link a:hover {
@@ -59,7 +60,6 @@ label {
 
 .demo-user {
   text-decoration: underline;
-  transition: color, 0.3s, ease-in-out;
   color: white;
 }
 
