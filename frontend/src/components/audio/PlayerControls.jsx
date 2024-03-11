@@ -10,31 +10,31 @@ import {
 } from '../../store/audio/audioActions';
 import { FaPlayCircle, FaPauseCircle } from 'react-icons/fa';
 import {
-  IoPlayBackSharp,
-  IoPlayForwardSharp,
+  // IoPlayBackSharp,
+  // IoPlayForwardSharp,
   IoPlaySkipBackSharp,
   IoPlaySkipForwardSharp,
-  IoPlaySharp,
-  IoPauseSharp,
+  // IoPlaySharp,
+  // IoPauseSharp,
 } from 'react-icons/io5';
 import './PlayerControls.css';
-import { formatTime } from '../helpers/formatTime';
-import { formatDuration } from '../helpers/formatDuration';
+// import { formatTime } from '../helpers/formatTime';
+// import { formatDuration } from '../helpers/formatDuration';
 
 const PlayerControls = ({ audioRef, currentVolume, onVolumeChange }) => {
   const dispatch = useDispatch();
   const isPlaying = useSelector((state) => state.audio.toggleIsPlaying);
-  const isShuffled = useSelector((state) => state.audio.toggleShuffle);
+  // const isShuffled = useSelector((state) => state.audio.toggleShuffle);
   const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
+  // const [duration, setDuration] = useState(0);
 
   const handlePlayPause = () => {
     dispatch(togglePlayPause());
   };
 
-  const handleToggleShuffle = () => {
-    dispatch(toggleShuffle());
-  };
+  // const handleToggleShuffle = () => {
+  //   dispatch(toggleShuffle());
+  // };
 
   const handleNext = () => {
     dispatch(playNext());
@@ -44,16 +44,16 @@ const PlayerControls = ({ audioRef, currentVolume, onVolumeChange }) => {
     dispatch(playPrevious());
   };
 
-  const handleClearQueue = () => {
-    dispatch(clearQueue());
-  };
+  // const handleClearQueue = () => {
+  //   dispatch(clearQueue());
+  // };
 
   // this will depend on what i want to do with the queue?
   // const handleSetQueue = (newQueue) => {
   //   dispatch(setQueue(newQueue));
   // };
   useEffect(() => {
-    const player = document.getElementById('audio-player');
+    // const player = document.getElementById('audio-player');
 
     const audio = audioRef.current;
     const handleTimeUpdate = () => {

@@ -73,7 +73,7 @@ function LoginForm() {
             </form>
 
             <div className="new-user-container">
-              <p>Don't have an account?</p>
+              <p>Don&apos;t have an account?</p>
               <p className="login-link-hover">
                 {/* <Link to="/signup">Sign up for Motify</Link> */}
               </p>

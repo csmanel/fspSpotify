@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './RightPanel.css';
 import AlbumPage from './ShowPages/AlbumPage';
 import PlaylistPage from './ShowPages/PlaylistPage';
 import HomePage from './ShowPages/HomePage';
 
 const RightPanel = ({ type }) => {
-  const [componentType, setComponentType] = useState(type);
+  // const [componentType, setComponentType] = useState(type);
 
   return (
     <div className="right-container">

@@ -27,10 +27,10 @@ const createPlaylist = (playlist) => ({
   playlist,
 });
 
-const updatePlaylist = (playlist) => ({
-  type: UPDATE_PLAYLIST,
-  playlist,
-});
+// const updatePlaylist = (playlist) => ({
+//   type: UPDATE_PLAYLIST,
+//   playlist,
+// });
 
 const removePlaylist = (playlistId) => ({
   type: REMOVE_PLAYLIST,
@@ -49,7 +49,7 @@ const removeSong = (playlistId, songId) => ({
   songId,
 });
 
-export const fetchPlaylists = async () => {
+export const fetchPlaylists = async (dispatch) => {
   const response = await csrfFetch('/api/playlists');
 
   if (response.ok) {

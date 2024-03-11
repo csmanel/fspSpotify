@@ -1,5 +1,5 @@
-import PlayerControls from './PlayerControls';
-import { BsMusicNoteBeamed } from 'react-icons/bs';
+// import PlayerControls from './PlayerControls';
+// import { BsMusicNoteBeamed } from 'react-icons/bs';
 import test_src from '../../data/audioFile/magdalena/MAGDALENA_03_King_of_the_Blind_Master1WEB.mp3';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
@@ -9,7 +9,7 @@ export default function SongDisplay({ currentSong, audioRef, currentVolume }) {
   const dispatch = useDispatch();
 
   const currentAlbum = useSelector((state) => state.audio.currentAlbum);
-  const currentArtist = useSelector((state) => state.audio.currentArtist);
+  // const currentArtist = useSelector((state) => state.audio.currentArtist);
 
   const toggleIsPlaying = useSelector((state) => {
     return state.audio.toggleIsPlaying;
@@ -26,33 +26,33 @@ export default function SongDisplay({ currentSong, audioRef, currentVolume }) {
   }, [toggleIsPlaying]);
 
   //handles next song
-  const handleNextSong = () => {
-    const nextIndex =
-      (currentAlbum.songs.indexOf(currentSong) + 1) % currentAlbum.songs.length;
-    const nextSong = currentAlbum.songs[nextIndex];
+  // const handleNextSong = () => {
+  //   const nextIndex =
+  //     (currentAlbum.songs.indexOf(currentSong) + 1) % currentAlbum.songs.length;
+  //   const nextSong = currentAlbum.songs[nextIndex];
 
-    dispatch(receiveSong(nextSong));
+  //   dispatch(receiveSong(nextSong));
 
-    if (!toggleIsPlaying) {
-      dispatch(togglePlayPause);
-    }
-  };
+  //   if (!toggleIsPlaying) {
+  //     dispatch(togglePlayPause);
+  //   }
+  // };
 
   //handles previous song
-  const handlePrevSong = () => {
-    const prevIndex =
-      (currentAlbum.songs.indexOf(currentSong) -
-        1 +
-        currentAlbum.songs.length) %
-      currentAlbum.songs.length;
-    const prevSong = currentAlbum.songs[prevIndex];
+  // const handlePrevSong = () => {
+  //   const prevIndex =
+  //     (currentAlbum.songs.indexOf(currentSong) -
+  //       1 +
+  //       currentAlbum.songs.length) %
+  //     currentAlbum.songs.length;
+  //   const prevSong = currentAlbum.songs[prevIndex];
 
-    dispatch(receiveSong(prevSong));
+  //   dispatch(receiveSong(prevSong));
 
-    if (!toggleIsPlaying) {
-      dispatch(togglePlayPause);
-    }
-  };
+  //   if (!toggleIsPlaying) {
+  //     dispatch(togglePlayPause);
+  //   }
+  // };
 
   return (
     <div className="song-display">

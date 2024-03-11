@@ -1,4 +1,3 @@
-import React from 'react';
 import AudioPlayer from '../audio/AudioPlayer';
 import './PlayBar.css';
 

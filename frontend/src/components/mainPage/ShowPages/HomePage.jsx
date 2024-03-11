@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { csrfFetch } from '../../../store/csrf';
 import { receiveAlbums } from '../../../store/album';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './HomePage.css';
 import YourPlaylists from './YourPlaylists';
 import Navigation from '../../Navigation';

@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { csrfFetch } from '../../store/csrf';
 import { receivePlaylists } from '../../store/playlist';
 import '../mainPage/Library.css';
-import magdalenaCover from '../../data/images/magdalenaCover.png';
 
 const PlaylistIndex = () => {
   const dispatch = useDispatch();

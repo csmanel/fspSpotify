@@ -33,12 +33,12 @@ const PlaylistPage = () => {
     return <p>loading playlist....</p>;
   }
 
-  const handleAudioRef = (i) => {
-    if (audioRef.current) {
-      audioRef.current.src = playlist.songs[i].audioUrl;
-      audioRef.current.play();
-    }
-  };
+  // const handleAudioRef = (i) => {
+  //   if (audioRef.current) {
+  //     audioRef.current.src = playlist.songs[i].audioUrl;
+  //     audioRef.current.play();
+  //   }
+  // };
 
   return (
     <div className="album-display">
@@ -58,7 +58,7 @@ const PlaylistPage = () => {
         <div className="grid-header">Album</div>
         <div className="grid-header">Duration</div>
         {playlist.songs?.map((song, index) => (
-          <div className="track">
+          <div className="track" key={index}>
             {/* <li key={index} onClick={() => handleAudioRef(song)}> */}
             <div className="song-track">{index + 1}</div>
             <div className="playlist-song-details">

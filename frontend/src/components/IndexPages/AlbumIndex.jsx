@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { receiveAlbums } from '../../store/album';
 import { csrfFetch } from '../../store/csrf';
 import '../mainPage/Library.css';
-import magdalenaCover from '../../data/images/magdalenaCover.png';
 
 const AlbumIndex = () => {
   const dispatch = useDispatch();
