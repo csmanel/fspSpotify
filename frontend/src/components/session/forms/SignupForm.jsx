@@ -8,7 +8,7 @@ import './SignupForm.css';
 function SignupForm() {
   const dispatch = useDispatch();
   const { user: sessionUser } = useSelector((state) => state.session);
-  const [formData, setFormData] = useState({
+  const [data, setData] = useState({
     email: '',
     username: '',
     password: '',
@@ -20,12 +20,12 @@ function SignupForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setData({ ...data, [name]: value });
   };
 
-  const handleSignup = async (formData) => {
+  const handleSignup = async (data) => {
     try {
-      await dispatch(sessionActions.signup(formData));
+      await dispatch(sessionActions.signup(data));
     } catch (error) {
       handleErrors(error);
     }
@@ -34,10 +34,11 @@ function SignupForm() {
   const handleErrors = async (error) => {
     let errorData;
     try {
-      errorData = await error.clone().json();
+      errorData = await error.json();
     } catch {
       errorData = await error.text();
     }
+
     if (errorData?.errors) {
       setErrors(errorData.errors);
     } else if (errorData) {
@@ -49,10 +50,10 @@ function SignupForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { password, confirmPassword } = formData;
+    const { password, confirmPassword } = data;
     if (password === confirmPassword) {
       setErrors([]);
-      handleSignup(formData);
+      handleSignup(data);
     } else {
       setErrors([
         'Confirm Password field must be the same as the Password field',
@@ -75,7 +76,7 @@ function SignupForm() {
             <input
               type="text"
               name="email"
-              value={formData.email}
+              value={data.email}
               onChange={handleChange}
               required
             />
@@ -85,7 +86,7 @@ function SignupForm() {
             <input
               type="text"
               name="username"
-              value={formData.username}
+              value={data.username}
               onChange={handleChange}
               required
             />
@@ -95,7 +96,7 @@ function SignupForm() {
             <input
               type="password"
               name="password"
-              value={formData.password}
+              value={data.password}
               onChange={handleChange}
               required
             />
@@ -105,7 +106,7 @@ function SignupForm() {
             <input
               type="password"
               name="confirmPassword"
-              value={formData.confirmPassword}
+              value={data.confirmPassword}
               onChange={handleChange}
               required
             />

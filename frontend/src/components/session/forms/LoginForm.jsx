@@ -29,11 +29,16 @@ function LoginForm() {
 
   const handleErrors = async (error) => {
     let errorData;
-    try {
-      errorData = await error.clone().json();
-    } catch {
+    if (error.headers.get('content-type').includes('application/json')) {
+      try {
+        errorData = await error.json();
+      } catch {
+        errorData = await error.text();
+      }
+    } else {
       errorData = await error.text();
     }
+
     if (errorData?.errors) {
       setErrors(errorData.errors);
     } else if (errorData) {
