@@ -60,6 +60,8 @@ Users can play/pause, skip to previous and upcoming tracks.
   };
 ```
 
+![Home Page](./public/assets/spotify-screenshot.PNG)
+
 # Features coming soon 
 
 -Playlist Creation 
